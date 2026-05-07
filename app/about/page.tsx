@@ -1,12 +1,11 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, CheckCircle2 } from 'lucide-react'
 import AnimatedSection from '@/components/AnimatedSection'
 import GradientText from '@/components/GradientText'
 import PageHeader from '@/components/PageHeader'
 import TeamCard from '@/components/TeamCard'
 import type { TeamMember } from '@/components/TeamCard'
-import PillButton from '@/components/PillButton'
 import Grainient from '@/components/Grainient'
 import { OpenContactButton } from '@/components/OpenContactButton'
 
@@ -25,29 +24,34 @@ const regions = [
 
 const values = [
   {
+    num: '01',
     title: 'Method Neutral',
     desc: 'We start with your business question, not a pre-packaged methodology. The research approach is always determined by the challenge — never the other way around.',
-    color: 'text-amber-700', bg: 'bg-amber-50', border: 'border-amber-200',
+    accent: '#E8A020',
   },
   {
+    num: '02',
     title: 'Ground-Level Expertise',
     desc: 'Our insights are built on fieldwork and primary evidence, not downloaded reports. We operate in the market — not from a distance.',
-    color: 'text-blue-700', bg: 'bg-blue-50', border: 'border-blue-200',
+    accent: '#2B4A8C',
   },
   {
+    num: '03',
     title: 'Bespoke by Design',
     desc: 'Every engagement is architected around your unique challenge, your market, and your objective. No templates. No off-the-shelf thinking.',
-    color: 'text-purple-700', bg: 'bg-purple-50', border: 'border-purple-200',
+    accent: '#7D2B5E',
   },
   {
+    num: '04',
     title: 'AI-Integrated',
     desc: 'We deploy AI where it accelerates value — faster synthesis, sharper pattern recognition, richer secondary intelligence. Judgement remains human.',
-    color: 'text-pink-700', bg: 'bg-pink-50', border: 'border-pink-200',
+    accent: '#1A7A5E',
   },
   {
+    num: '05',
     title: 'Bilingual Authority',
     desc: 'Fluent in English and Arabic. Deeply fluent in cultural translation — understanding what data means in the human context of each market.',
-    color: 'text-emerald-700', bg: 'bg-emerald-50', border: 'border-emerald-200',
+    accent: '#4A3AAA',
   },
 ]
 
@@ -56,25 +60,25 @@ const howWeWork = [
     num: '01',
     title: 'Diagnose First',
     desc: 'Deep understanding of your business challenge through structured discovery. We ask the right questions before we prescribe any solution.',
-    color: 'text-amber-700', bg: 'bg-amber-50', border: 'border-amber-200', numColor: 'text-amber-300',
+    bg: 'bg-amber-50', border: 'border-amber-200', numColor: 'text-amber-300', titleColor: 'text-amber-900',
   },
   {
     num: '02',
     title: 'Design the Methodology',
     desc: 'Craft the optimal research approach based on your core objective, available information, market complexity, and practical constraints.',
-    color: 'text-blue-700', bg: 'bg-blue-50', border: 'border-blue-200', numColor: 'text-blue-300',
+    bg: 'bg-blue-50', border: 'border-blue-200', numColor: 'text-blue-300', titleColor: 'text-blue-900',
   },
   {
     num: '03',
     title: 'Blend Techniques',
     desc: 'Most engagements benefit from a strategic combination: quantitative breadth, qualitative depth, targeted secondary intelligence, and bespoke techniques designed for your specific market.',
-    color: 'text-purple-700', bg: 'bg-purple-50', border: 'border-purple-200', numColor: 'text-purple-300',
+    bg: 'bg-purple-50', border: 'border-purple-200', numColor: 'text-purple-300', titleColor: 'text-purple-900',
   },
   {
     num: '04',
     title: 'Deliver What Moves Decisions',
     desc: 'Our output is built to be used — clear, precise, and directly actionable by leadership teams making real commercial decisions.',
-    color: 'text-pink-700', bg: 'bg-pink-50', border: 'border-pink-200', numColor: 'text-pink-300',
+    bg: 'bg-emerald-50', border: 'border-emerald-200', numColor: 'text-emerald-300', titleColor: 'text-emerald-900',
   },
 ]
 
@@ -168,7 +172,9 @@ export default function AboutPage() {
       {/* ── Our Story ── */}
       <section id="our-story" className="bg-white section-padding">
         <div className="container-content">
-          <div className="max-w-3xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-16 items-start">
+
+            {/* Left — narrative */}
             <AnimatedSection>
               <span className="section-tag">Our Story</span>
               <h2 className="font-heading font-bold text-3xl md:text-4xl text-text mb-8">
@@ -195,22 +201,64 @@ export default function AboutPage() {
                 </p>
               </div>
 
-              {/* Three principles */}
-              <div className="mt-10 p-6 rounded-2xl bg-bg-soft border border-border">
-                <p className="font-heading font-bold text-[22px] text-text mb-2">Method Neutral. Ground-Level. Bespoke.</p>
-                <p className="font-body text-text-muted text-[14px]">
-                  The three principles that have guided us since day one — and the reason our clients keep coming back.
-                </p>
+              {/* Principles callout */}
+              <div className="mt-10 rounded-2xl border border-primary/20 overflow-hidden">
+                <div className="bg-primary/8 border-b border-primary/15 px-6 py-4">
+                  <p className="font-heading font-bold text-[20px] text-primary">Method Neutral. Ground-Level. Bespoke.</p>
+                  <p className="font-body text-[13px] text-text-muted mt-1">The three principles that have guided us since day one.</p>
+                </div>
+                <div className="bg-white px-6 py-5 space-y-3 font-body text-[14px] text-text-muted leading-relaxed">
+                  <p>
+                    We start with your business question, not a pre-packaged methodology. We build insight on the ground, in the market, not in databases alone. And we design every engagement from the ground up around your specific challenge, your market, and your objective.
+                  </p>
+                  <p>
+                    No templates. No off-the-shelf thinking. No corporate frameworks that force a square brief into a round solution.
+                  </p>
+                  <p className="text-text font-medium">
+                    This is what independence gives us. The freedom to listen first, design second, and deliver with precision that only comes when there's true accountability for the work.
+                  </p>
+                </div>
+              </div>
+            </AnimatedSection>
+
+            {/* Right — timeline + quote */}
+            <AnimatedSection delay={0.15} className="lg:sticky lg:top-32">
+              {/* Timeline */}
+              <div className="rounded-2xl border border-border bg-bg-soft p-6 mb-6">
+                <p className="font-heading font-semibold text-[11px] tracking-[0.12em] uppercase text-text-muted mb-6">Our Journey</p>
+                <div className="space-y-0">
+                  {[
+                    { year: '2007', title: 'The Beginning', desc: 'A focused team inside Kantar MENA sets a new standard for MEA intelligence.' },
+                    { year: '2013', title: 'Regional Leadership', desc: 'Become Kantar MENA\'s fastest-growing and most profitable research unit.' },
+                    { year: '2020', title: '4BC Global Founded', desc: 'The entire team steps out as one — people, clients, methodologies, expertise.' },
+                    { year: 'Now', title: 'Built For What\'s Next', desc: '450+ engagements. 40+ markets. Still evolving.' },
+                  ].map((m, i, arr) => (
+                    <div key={m.year} className="flex gap-4">
+                      <div className="flex flex-col items-center">
+                        <div className="w-8 h-8 rounded-full bg-white border-2 border-primary flex items-center justify-center flex-shrink-0">
+                          <div className="w-2 h-2 rounded-full bg-primary" />
+                        </div>
+                        {i < arr.length - 1 && <div className="w-px flex-1 bg-border my-1" />}
+                      </div>
+                      <div className={`pb-6 ${i === arr.length - 1 ? 'pb-0' : ''}`}>
+                        <span className="font-heading font-black text-[13px] text-primary">{m.year}</span>
+                        <p className="font-heading font-semibold text-[14px] text-text mt-0.5">{m.title}</p>
+                        <p className="font-body text-[12px] text-text-muted mt-1 leading-relaxed">{m.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
 
               {/* Founding quote */}
-              <blockquote className="mt-8 border-l-4 border-accent pl-5">
-                <p className="font-heading italic text-[17px] text-text-muted leading-relaxed">
+              <blockquote className="rounded-2xl bg-accent/10 border border-accent/25 p-6">
+                <p className="font-heading italic text-[16px] text-text leading-relaxed mb-3">
                   "We didn't just bring our clients with us. We brought the mission."
                 </p>
-                <cite className="font-body text-[13px] text-text-muted/60 not-italic mt-2 block">— Founding Team, 4BC Global</cite>
+                <cite className="font-body text-[12px] text-text-muted/70 not-italic">— Founding Team, 4BC Global</cite>
               </blockquote>
             </AnimatedSection>
+
           </div>
         </div>
       </section>
@@ -218,18 +266,32 @@ export default function AboutPage() {
       {/* ── What We Stand For ── */}
       <section id="what-we-stand-for" className="bg-bg-soft section-padding">
         <div className="container-content">
-          <AnimatedSection className="text-center mb-12">
-            <span className="section-tag">What We Stand For</span>
-            <h2 className="font-heading font-bold text-3xl md:text-4xl text-text mb-3">
-              <GradientText hoverOnly animationSpeed={2}>These aren't values on a wall. They shape how we work.</GradientText>
-            </h2>
+          <AnimatedSection className="mb-12">
+            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+              <div>
+                <span className="section-tag">What We Stand For</span>
+                <h2 className="font-heading font-bold text-3xl md:text-4xl text-text">
+                  <GradientText hoverOnly animationSpeed={2}>These aren't values on a wall.<br />They shape how we work.</GradientText>
+                </h2>
+              </div>
+              <p className="font-body text-[14px] text-text-muted max-w-xs md:text-right leading-relaxed">
+                Five principles embedded in every engagement we take on.
+              </p>
+            </div>
           </AnimatedSection>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+
+          <div className="space-y-3">
             {values.map((v, i) => (
-              <AnimatedSection key={v.title} delay={i * 0.1}>
-                <div className={`${v.bg} border ${v.border} rounded-2xl p-6 h-full`}>
-                  <h3 className={`font-heading font-bold text-[17px] ${v.color} mb-2`}>{v.title}</h3>
-                  <p className="font-body text-[13px] text-text-muted leading-relaxed">{v.desc}</p>
+              <AnimatedSection key={v.title} delay={i * 0.07}>
+                <div className="group bg-white rounded-2xl border border-border hover:border-border hover:shadow-sm transition-all p-5 flex items-start gap-5">
+                  <span className="font-heading font-black text-[52px] leading-none flex-shrink-0 w-16" style={{ color: v.accent }}>{v.num}</span>
+                  <div className="flex-1 min-w-0">
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-1.5">
+                      <h3 className="font-heading font-bold text-[16px] text-text">{v.title}</h3>
+                      <div className="h-px flex-1 mx-4 bg-border hidden sm:block" />
+                    </div>
+                    <p className="font-body text-[13px] text-text-muted leading-relaxed">{v.desc}</p>
+                  </div>
                 </div>
               </AnimatedSection>
             ))}
@@ -243,7 +305,9 @@ export default function AboutPage() {
           <Grainient color1="#351e6b" color2="#9a4788" color3="#b19f2b" timeSpeed={2.35} colorBalance={-0.47} warpStrength={1.9} warpFrequency={4.2} warpSpeed={0.5} warpAmplitude={26} blendAngle={28} blendSoftness={0.39} rotationAmount={260} noiseScale={2} grainAmount={0.1} grainScale={2} contrast={1.5} gamma={1} saturation={1} zoom={0.9} />
         </div>
         <div className="container-content relative z-10">
-          <div className="max-w-3xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+            {/* Left — text */}
             <AnimatedSection>
               <span className="font-heading font-semibold text-[11px] tracking-[0.12em] uppercase text-accent mb-4 inline-block">Why MEA Demands Something Different</span>
               <h2 className="font-heading font-bold text-3xl md:text-4xl text-white mb-8 leading-tight">
@@ -260,21 +324,27 @@ export default function AboutPage() {
                   That's what we bring. Years of presence. Lived understanding. Tested methodologies refined across 450+ engagements.
                 </p>
               </div>
+            </AnimatedSection>
 
-              {/* Stats */}
-              <div className="grid grid-cols-3 gap-4 mt-10 pt-10 border-t border-white/15">
+            {/* Right — stats */}
+            <AnimatedSection delay={0.15}>
+              <div className="grid grid-cols-1 gap-4">
                 {[
-                  { num: '450+', label: 'Engagements' },
-                  { num: '40+', label: 'Countries' },
-                  { num: '100+', label: 'Years Combined' },
-                ].map((s) => (
-                  <div key={s.label} className="text-center">
-                    <div className="font-heading font-black text-[2.5rem] text-accent leading-none">{s.num}</div>
-                    <div className="font-body text-[12px] text-white/45 uppercase tracking-wider mt-1">{s.label}</div>
+                  { num: '450+', label: 'Bespoke Engagements', sub: 'Across MEA and beyond' },
+                  { num: '40+', label: 'Countries Navigated', sub: 'With boots on the ground' },
+                  { num: '100+', label: 'Years Combined Expertise', sub: 'Across our leadership team' },
+                ].map((s, i) => (
+                  <div key={s.label} className="bg-white/10 border border-white/15 rounded-2xl px-6 py-5 flex items-center gap-5 backdrop-blur-sm">
+                    <div className="font-heading font-black text-[2.8rem] text-accent leading-none w-28 flex-shrink-0">{s.num}</div>
+                    <div>
+                      <div className="font-heading font-semibold text-[15px] text-white">{s.label}</div>
+                      <div className="font-body text-[12px] text-white/45 mt-0.5">{s.sub}</div>
+                    </div>
                   </div>
                 ))}
               </div>
             </AnimatedSection>
+
           </div>
         </div>
       </section>
@@ -282,79 +352,150 @@ export default function AboutPage() {
       {/* ── Geographic Footprint ── */}
       <section id="geographical-footprint" className="bg-white section-padding">
         <div className="container-content">
-          <AnimatedSection className="text-center mb-12">
-            <span className="section-tag">Our Reach</span>
-            <h2 className="font-heading font-bold text-3xl md:text-4xl text-text mb-3">
-              <GradientText hoverOnly animationSpeed={2}>40+ Countries. 2 Offices. 4 Partner Hubs.</GradientText>
-            </h2>
-            <p className="font-body text-text-muted max-w-xl mx-auto">
-              Operating across the complexity of MEA — with partner offices and collaborators enabling regional depth with local execution.
-            </p>
+          <AnimatedSection className="mb-12">
+            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+              <div>
+                <span className="section-tag">Our Reach</span>
+                <h2 className="font-heading font-bold text-3xl md:text-4xl text-text">
+                  <GradientText hoverOnly animationSpeed={2}>40+ Countries. 2 Offices. 4 Partner Hubs.</GradientText>
+                </h2>
+              </div>
+              <p className="font-body text-[14px] text-text-muted max-w-xs md:text-right leading-relaxed">
+                Operating across the full complexity of MEA — with local execution at every level.
+              </p>
+            </div>
           </AnimatedSection>
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+            {/* Left — key numbers */}
             <AnimatedSection>
-              <div className="bg-gradient-hero rounded-2xl p-8 min-h-[300px] flex items-center justify-center relative overflow-hidden">
-                <div className="absolute inset-0 opacity-20">
-                  <svg viewBox="0 0 800 400" className="w-full h-full" fill="none">
-                    {[...Array(50)].map((_, i) => (
-                      <circle key={i} cx={50 + (i % 10) * 70} cy={50 + Math.floor(i / 10) * 70} r="3" fill="white" opacity="0.6" />
-                    ))}
-                  </svg>
-                </div>
-                <div className="relative z-10">
-                  <div className="grid grid-cols-2 gap-6">
-                    {[
-                      { num: '40+', label: 'Countries' },
-                      { num: '2', label: 'Offices' },
-                      { num: '4', label: 'Partner Hubs' },
-                      { num: '11', label: 'Sectors' },
-                    ].map((item) => (
-                      <div key={item.label} className="text-center">
-                        <div className="font-heading font-black text-3xl text-accent">{item.num}</div>
-                        <div className="font-body text-xs text-gray-300 mt-1">{item.label}</div>
-                      </div>
-                    ))}
+              <div className="grid grid-cols-2 gap-4 mb-4">
+                {[
+                  { num: '40+', label: 'Countries', accent: '#2B4A8C' },
+                  { num: '2', label: 'Offices', accent: '#7D2B5E' },
+                  { num: '4', label: 'Partner Hubs', accent: '#E8A020' },
+                  { num: '11', label: 'Sectors', accent: '#1A7A5E' },
+                ].map((item) => (
+                  <div key={item.label} className="rounded-2xl border border-border bg-bg-soft p-5">
+                    <div className="font-heading font-black text-[2.2rem] leading-none mb-1" style={{ color: item.accent }}>{item.num}</div>
+                    <div className="font-body text-[12px] text-text-muted uppercase tracking-wider">{item.label}</div>
                   </div>
-                </div>
+                ))}
+              </div>
+              <div className="rounded-2xl bg-accent/10 border border-accent/25 p-5">
+                <p className="font-heading font-semibold text-[12px] uppercase tracking-[0.1em] text-accent mb-2">Partner Offices</p>
+                <p className="font-body text-[14px] text-text-muted">India · Saudi Arabia · United Kingdom</p>
               </div>
             </AnimatedSection>
+
+            {/* Right — regions list */}
             <AnimatedSection delay={0.2}>
-              <div className="space-y-3">
+              <div className="space-y-2">
                 {regions.map((r) => (
-                  <div key={r.region} className="flex gap-4 p-4 rounded-xl border border-border hover:border-primary/30 transition-colors">
-                    <div className="w-36 flex-shrink-0">
+                  <div key={r.region} className="flex gap-4 p-4 rounded-xl border border-border hover:bg-bg-soft transition-colors">
+                    <div className="w-40 flex-shrink-0">
                       <span className="font-heading font-semibold text-[13px] text-primary">{r.region}</span>
                     </div>
                     <p className="font-body text-[13px] text-text-muted">{r.countries}</p>
                   </div>
                 ))}
-                <div className="p-4 rounded-xl bg-accent/10 border border-accent/30">
-                  <p className="font-heading font-semibold text-[13px] text-accent">Partner Offices</p>
-                  <p className="font-body text-[13px] text-text-muted mt-1">India · Saudi Arabia · India · United Kingdom</p>
-                </div>
               </div>
             </AnimatedSection>
           </div>
         </div>
       </section>
 
-      {/* ── Our Team ── */}
-      <section id="our-team" className="bg-bg-soft section-padding">
+      {/* ── Our Experience ── */}
+      <section id="our-experience" className="bg-bg-soft section-padding">
         <div className="container-content">
-          <AnimatedSection className="text-center mb-4">
-            <span className="section-tag">The Team</span>
-            <h2 className="font-heading font-bold text-3xl md:text-4xl text-text mb-3">
-              <GradientText hoverOnly animationSpeed={2}>100+ Years of Combined Research Expertise.</GradientText>
-            </h2>
+          <AnimatedSection className="mb-12">
+            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+              <div>
+                <span className="section-tag">Our Experience</span>
+                <h2 className="font-heading font-bold text-3xl md:text-4xl text-text">
+                  <GradientText hoverOnly animationSpeed={2}>Across Every Stage. Across Every Scale.</GradientText>
+                </h2>
+              </div>
+              <p className="font-body text-[14px] text-text-muted max-w-xs md:text-right leading-relaxed">
+                We have advised and supported organisations at every level — across 11 sectors, 450+ engagements.
+              </p>
+            </div>
           </AnimatedSection>
-          <AnimatedSection className="text-center mb-12">
-            <p className="font-body text-[16px] text-text-muted max-w-3xl mx-auto leading-relaxed">
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-8">
+            {[
+              {
+                title: 'Global & Regional Multinationals',
+                desc: 'Across FMCG, retail, financial services, energy, and technology — supporting market entry, competitive intelligence, and customer understanding.',
+                accent: '#2B4A8C',
+              },
+              {
+                title: 'Government & Public Sector',
+                desc: 'Policy intelligence, market assessment, and strategic advisory for national entities and government bodies across MEA.',
+                accent: '#7D2B5E',
+              },
+              {
+                title: 'Regional Conglomerates',
+                desc: 'Growth strategy, market entry, and competitive positioning for leading regional conglomerates navigating complex MEA dynamics.',
+                accent: '#E8A020',
+              },
+            ].map((item, i) => (
+              <AnimatedSection key={item.title} delay={i * 0.1}>
+                <div className="bg-white rounded-2xl border border-border p-6 h-full" style={{ borderTop: `3px solid ${item.accent}` }}>
+                  <h3 className="font-heading font-bold text-[16px] text-text mb-3" style={{ color: item.accent }}>{item.title}</h3>
+                  <p className="font-body text-[13px] text-text-muted leading-relaxed">{item.desc}</p>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+
+          {/* Stats + categories */}
+          <AnimatedSection>
+            <div className="rounded-2xl border border-border overflow-hidden bg-white">
+              <div className="grid grid-cols-3 divide-x divide-border border-b border-border">
+                {[
+                  { num: '11', label: 'Sectors', accent: '#2B4A8C' },
+                  { num: '450+', label: 'Engagements', accent: '#7D2B5E' },
+                  { num: '6', label: 'Research Categories', accent: '#E8A020' },
+                ].map((s) => (
+                  <div key={s.label} className="py-6 text-center">
+                    <div className="font-heading font-black text-[2.2rem] leading-none" style={{ color: s.accent }}>{s.num}</div>
+                    <div className="font-body text-[11px] text-text-muted uppercase tracking-wider mt-1">{s.label}</div>
+                  </div>
+                ))}
+              </div>
+              <div className="px-8 py-5 bg-bg-soft">
+                <p className="font-body text-[11px] text-text-muted uppercase tracking-[0.1em] mb-3">Research categories spanning</p>
+                <div className="flex flex-wrap gap-2">
+                  {['Market Assessment', 'Competitive Intelligence', 'Customer Understanding', 'Channel Strategy', 'Feasibility Studies', 'And Beyond'].map((cat) => (
+                    <span key={cat} className="font-body text-[12px] text-text-muted bg-white border border-border rounded-full px-3 py-1">{cat}</span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* ── Our Team ── */}
+      <section id="our-team" className="bg-white section-padding">
+        <div className="container-content">
+          <AnimatedSection className="mb-4">
+            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-4">
+              <div>
+                <span className="section-tag">The Team</span>
+                <h2 className="font-heading font-bold text-3xl md:text-4xl text-text">
+                  <GradientText hoverOnly animationSpeed={2}>100+ Years of Combined Research Expertise.</GradientText>
+                </h2>
+              </div>
+            </div>
+            <p className="font-body text-[16px] text-text-muted max-w-3xl leading-relaxed">
               Our team brings over <strong className="text-text">100 years of combined research and consulting experience</strong> across the Middle East, Africa, Asia, and Europe. Every engagement is led by a research director — so you always work with the person who truly understands your challenge.
             </p>
           </AnimatedSection>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
             {team.map((member, i) => (
-              <AnimatedSection key={member.name} delay={i * 0.1}>
+              <AnimatedSection key={member.name} delay={i * 0.08}>
                 <TeamCard member={member} />
               </AnimatedSection>
             ))}
@@ -363,24 +504,29 @@ export default function AboutPage() {
       </section>
 
       {/* ── How We Work ── */}
-      <section id="how-we-work" className="bg-white section-padding">
+      <section id="how-we-work" className="bg-bg-soft section-padding">
         <div className="container-content">
-          <AnimatedSection className="text-center mb-12">
-            <span className="section-tag">How We Work</span>
-            <h2 className="font-heading font-bold text-3xl md:text-4xl text-text mb-3">
-              <GradientText hoverOnly animationSpeed={2}>A discipline forged over a decade of MEA research.</GradientText>
-            </h2>
-            <p className="font-body text-text-muted max-w-xl mx-auto">
-              Every engagement follows the same rigorous approach — regardless of sector, scale, or geography.
-            </p>
+          <AnimatedSection className="mb-12">
+            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+              <div>
+                <span className="section-tag">How We Work</span>
+                <h2 className="font-heading font-bold text-3xl md:text-4xl text-text">
+                  <GradientText hoverOnly animationSpeed={2}>A discipline forged over a decade of MEA research.</GradientText>
+                </h2>
+              </div>
+              <p className="font-body text-[14px] text-text-muted max-w-xs md:text-right leading-relaxed">
+                Every engagement follows the same rigorous approach — regardless of sector, scale, or geography.
+              </p>
+            </div>
           </AnimatedSection>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
             {howWeWork.map((s, i) => (
-              <AnimatedSection key={s.num} delay={i * 0.1}>
-                <div className={`${s.bg} border ${s.border} rounded-2xl p-6 h-full`}>
+              <AnimatedSection key={s.num} delay={i * 0.12}>
+                <div className={`${s.bg} border ${s.border} rounded-2xl p-6 h-full flex flex-col`}>
                   <span className={`font-heading font-black text-[64px] leading-none ${s.numColor} block mb-3`}>{s.num}</span>
-                  <h3 className={`font-heading font-bold text-[17px] ${s.color} mb-2`}>{s.title}</h3>
-                  <p className="font-body text-[13px] text-text-muted leading-relaxed">{s.desc}</p>
+                  <h3 className={`font-heading font-bold text-[17px] ${s.titleColor} mb-3 leading-tight`}>{s.title}</h3>
+                  <p className="font-body text-[13px] text-text-muted leading-relaxed flex-1">{s.desc}</p>
                 </div>
               </AnimatedSection>
             ))}

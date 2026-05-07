@@ -41,3 +41,9 @@ sf-pro-display/
 # source images (copies live in public/images/)
 bslady.png
 9856fa2ed296d9426fa7869fc33ad24a.jpg
+
+# working documents / temp files
+*.pdf
+*.docx
+*.doc
+docx-*.txt

@@ -140,43 +140,59 @@ export default function HomePageContent() {
       <div className="absolute -bottom-20 -left-20 w-[500px] h-[500px] rounded-full opacity-[0.12] pointer-events-none"
         style={{ background: 'radial-gradient(circle, #2B4A8C 0%, transparent 70%)' }} />
 
-      <div className="container-content relative z-10 pt-24 pb-16 sm:pt-28 sm:pb-24 lg:pt-32 lg:pb-32">
-        <div className="grid grid-cols-1 items-center">
+      {/* Skyline — anchored to bottom-left */}
+      <div aria-hidden className="absolute bottom-0 left-1/2 -translate-x-1/2 z-[1] pointer-events-none select-none" style={{ height: '72%', width: '90%' }}>
+        <img
+          src="/brand/hero-skyline.png"
+          alt=""
+          className="w-full h-full object-contain object-bottom"
+          style={{ opacity: 0.42, mixBlendMode: 'luminosity' }}
+        />
+      </div>
 
-          {/* Left — dashboard (hidden) */}
-          {/* <AnimatedSection delay={0.18} className="hidden md:flex md:justify-start">
-            <HeroDashboard />
-          </AnimatedSection> */}
+      <div className="container-content relative z-10 pt-24 pb-56 sm:pt-28 sm:pb-72 lg:pt-36 lg:pb-80">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
 
-          {/* Text — fixed-width column, right-anchored */}
-          <AnimatedSection className="text-right">
-            <div className="max-w-[860px] ml-auto">
+          {/* Left — eyebrow + headline */}
+          <AnimatedSection className="text-left -ml-4 sm:-ml-6 lg:-ml-10">
+            {/* Eyebrow */}
+            <div className="flex items-center gap-3 mb-7">
+              <div className="h-px w-8 bg-white/40 flex-shrink-0" />
+              <span className="font-body text-[11px] font-semibold tracking-[0.22em] uppercase text-white/55">
+                Middle East &amp; Africa Market Advisory
+              </span>
+            </div>
 
-              {/* Eyebrow */}
-              <div className="flex items-center justify-end gap-3 mb-7">
-                <span className="font-body text-[11px] font-semibold tracking-[0.22em] uppercase text-white/55">
-                  Middle East &amp; Africa Market Advisory
-                </span>
-                <div className="h-px w-8 bg-white/40 flex-shrink-0" />
-              </div>
+            {/* Headline */}
+            <h1 className="leading-none">
+              <span className="block font-heading font-black text-white tracking-[-0.03em] uppercase text-[48px] sm:text-[64px] lg:text-[88px]">
+                Clarity Where Data is Opaque.
+              </span>
+            </h1>
+          </AnimatedSection>
 
-              {/* Headline — fixed 88px on lg+, scales down only below that */}
-              <h1 className="mb-6 leading-none">
-                <span className="block font-heading font-black text-white tracking-[-0.03em] uppercase text-[48px] sm:text-[64px] lg:text-[88px]">
-                  Clarity Where Data is Opaque.
-                </span>
-              </h1>
-
+          {/* Right — body + CTAs + stats */}
+          <AnimatedSection delay={0.1} className="text-left lg:text-right">
+            <div className="lg:ml-auto max-w-[420px] lg:max-w-none">
               {/* Thin rule */}
               <div className="h-px w-full bg-white/15 mb-6" />
 
               {/* Body */}
-              <p className="font-body text-[14px] text-white/55 leading-relaxed mb-8 ml-auto max-w-[44ch]">
+              <p className="font-body text-[14px] text-white/55 leading-relaxed mb-8">
                 We bridge the gap between regional complexity and commercial certainty — a specialist research firm built to navigate MEA through ground-level primary research and AI-accelerated synthesis.
               </p>
 
               {/* CTAs */}
-              <div className="flex flex-wrap items-center justify-end gap-4 sm:gap-5 mb-10">
+              <div className="flex flex-wrap items-center justify-start lg:justify-end gap-4 sm:gap-5 mb-10">
+                <OpenContactPill
+                  bgColor="#E8A020"
+                  textColor="#1A1A2E"
+                  fillColor="#ffffff"
+                  hoverTextColor="#1A4FA0"
+                  className="font-heading font-semibold text-[15px] px-7 py-3.5 shadow-lg"
+                >
+                  Discuss Your Market Challenge <ArrowRight size={15} />
+                </OpenContactPill>
                 <Link
                   href="/case-studies"
                   className="inline-flex items-center gap-1.5 font-body text-[13px] font-medium tracking-[0.04em] text-white/50 hover:text-white transition-colors group uppercase"
@@ -184,32 +200,22 @@ export default function HomePageContent() {
                   View Case Studies
                   <ArrowRight size={12} className="group-hover:translate-x-0.5 transition-transform" />
                 </Link>
-                <OpenContactPill
-                  bgColor="#E8A020"
-                  textColor="#1A1A2E"
-                  fillColor="#1A4FA0"
-                  hoverTextColor="#ffffff"
-                  className="font-heading font-semibold text-[15px] px-7 py-3.5 shadow-lg"
-                >
-                  Discuss Your Market Challenge <ArrowRight size={15} />
-                </OpenContactPill>
               </div>
 
               {/* Stats row */}
-              <div className="flex flex-wrap items-end justify-end gap-y-4">
-                <div className="border-r border-white/15 pr-5 mr-5 sm:pr-7 sm:mr-7 hidden sm:block pb-0.5">
-                  <div className="font-body text-[9px] text-white/30 tracking-[0.12em] uppercase leading-[1.7] text-right">
-                    Spun Out From Excellence<br />Kantar MENA · Est. 2020
-                  </div>
-                </div>
+              <div className="flex flex-wrap items-end justify-start lg:justify-end gap-y-4">
                 {heroStats.map((s, i) => (
-                  <div key={s.label} className={`${i > 0 ? 'border-l border-white/15 pl-5 ml-5 sm:pl-7 sm:ml-7' : ''} text-right`}>
+                  <div key={s.label} className={`${i > 0 ? 'border-l border-white/15 pl-5 ml-5 sm:pl-7 sm:ml-7' : ''} text-left`}>
                     <div className="font-heading font-black text-[28px] lg:text-[36px] text-white leading-none tracking-[-0.02em]">{s.num}</div>
                     <div className="font-body text-[9px] text-white/35 tracking-[0.14em] uppercase mt-1">{s.label}</div>
                   </div>
                 ))}
+                <div className="border-l border-white/15 pl-5 ml-5 sm:pl-7 sm:ml-7 hidden sm:block pb-0.5">
+                  <div className="font-body text-[9px] text-white/30 tracking-[0.12em] uppercase leading-[1.7]">
+                    Spun Out From Excellence<br />Kantar MENA · Est. 2020
+                  </div>
+                </div>
               </div>
-
             </div>
           </AnimatedSection>
         </div>
