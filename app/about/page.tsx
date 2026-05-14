@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { ArrowRight, CheckCircle2 } from 'lucide-react'
+import Image from 'next/image'
+import { ArrowRight, CheckCircle2, MapPin, Phone, Mail } from 'lucide-react'
 import AnimatedSection from '@/components/AnimatedSection'
 import GradientText from '@/components/GradientText'
 import PageHeader from '@/components/PageHeader'
@@ -159,6 +160,7 @@ export default function AboutPage() {
               { label: 'Why MEA', href: '#why-mea' },
               { label: 'Our Reach', href: '#geographical-footprint' },
               { label: 'The Team', href: '#our-team' },
+              { label: 'Saudi Arabia', href: '#saudi-arabia' },
               { label: 'How We Work', href: '#how-we-work' },
             ].map((item) => (
               <a key={item.label} href={item.href} className="whitespace-nowrap hover:text-primary transition-colors">
@@ -357,7 +359,7 @@ export default function AboutPage() {
               <div>
                 <span className="section-tag">Our Reach</span>
                 <h2 className="font-heading font-bold text-3xl md:text-4xl text-text">
-                  <GradientText hoverOnly animationSpeed={2}>40+ Countries. 2 Offices. 4 Partner Hubs.</GradientText>
+                  <GradientText hoverOnly animationSpeed={2}>40+ Countries. 3 Offices. 4 Partner Hubs.</GradientText>
                 </h2>
               </div>
               <p className="font-body text-[14px] text-text-muted max-w-xs md:text-right leading-relaxed">
@@ -367,14 +369,14 @@ export default function AboutPage() {
           </AnimatedSection>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
-            {/* Left — key numbers */}
+            {/* Left — key numbers + office addresses */}
             <AnimatedSection>
-              <div className="grid grid-cols-2 gap-4 mb-4">
+              <div className="grid grid-cols-2 gap-4 mb-6">
                 {[
                   { num: '40+', label: 'Countries', accent: '#2B4A8C' },
-                  { num: '2', label: 'Offices', accent: '#7D2B5E' },
+                  { num: '3', label: 'Offices', accent: '#7D2B5E' },
                   { num: '4', label: 'Partner Hubs', accent: '#E8A020' },
-                  { num: '11', label: 'Sectors', accent: '#1A7A5E' },
+                  { num: '12', label: 'Sectors', accent: '#1A7A5E' },
                 ].map((item) => (
                   <div key={item.label} className="rounded-2xl border border-border bg-bg-soft p-5">
                     <div className="font-heading font-black text-[2.2rem] leading-none mb-1" style={{ color: item.accent }}>{item.num}</div>
@@ -382,9 +384,56 @@ export default function AboutPage() {
                   </div>
                 ))}
               </div>
-              <div className="rounded-2xl bg-accent/10 border border-accent/25 p-5">
-                <p className="font-heading font-semibold text-[12px] uppercase tracking-[0.1em] text-accent mb-2">Partner Offices</p>
-                <p className="font-body text-[14px] text-text-muted">India · Saudi Arabia · United Kingdom</p>
+
+              {/* Office address cards */}
+              <div className="space-y-3">
+                {[
+                  {
+                    flag: '🇦🇪',
+                    city: 'Dubai, UAE',
+                    label: 'Head Office',
+                    address: 'Dubai, United Arab Emirates',
+                    phone: '+971 4 3595123',
+                    accent: '#2B4A8C',
+                  },
+                  {
+                    flag: '🇬🇧',
+                    city: 'Berkshire, UK',
+                    label: 'UK Office',
+                    address: '2 Thames Road, Langley, Berkshire, SL3 8DY',
+                    phone: '+44 1753 777999',
+                    accent: '#7D2B5E',
+                  },
+                  {
+                    flag: '🇸🇦',
+                    city: 'Riyadh, KSA',
+                    label: 'KSA Partner Office',
+                    address: 'Office 703, 7th Floor Aqarya #3, Olaya, Riyadh, Kingdom of Saudi Arabia',
+                    email: 'info@4sight.sa',
+                    accent: '#E8A020',
+                  },
+                ].map((office) => (
+                  <div key={office.city} className="rounded-xl border border-border bg-bg-soft p-4 flex gap-4 items-start">
+                    <span className="text-2xl flex-shrink-0 mt-0.5">{office.flag}</span>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center gap-2 mb-1">
+                        <span className="font-heading font-bold text-[14px] text-text">{office.city}</span>
+                        <span className="font-body text-[10px] font-semibold uppercase tracking-[0.1em] rounded-full px-2 py-0.5" style={{ backgroundColor: `${office.accent}15`, color: office.accent }}>{office.label}</span>
+                      </div>
+                      <p className="font-body text-[12.5px] text-text-muted leading-snug mb-1.5">{office.address}</p>
+                      {office.phone && (
+                        <a href={`tel:${office.phone.replace(/\s/g, '')}`} className="inline-flex items-center gap-1.5 font-body text-[12px] text-text-muted hover:text-primary transition-colors">
+                          <Phone size={11} /> {office.phone}
+                        </a>
+                      )}
+                      {office.email && (
+                        <a href={`mailto:${office.email}`} className="inline-flex items-center gap-1.5 font-body text-[12px] text-text-muted hover:text-primary transition-colors">
+                          <Mail size={11} /> {office.email}
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                ))}
               </div>
             </AnimatedSection>
 
@@ -499,6 +548,112 @@ export default function AboutPage() {
                 <TeamCard member={member} />
               </AnimatedSection>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Saudi Arabia Partnership ── */}
+      <section id="saudi-arabia" className="bg-bg-soft section-padding">
+        <div className="container-content">
+
+          {/* Header */}
+          <AnimatedSection className="mb-12">
+            <span className="section-tag">Strategic Partnership</span>
+            <h2 className="font-heading font-bold text-3xl md:text-4xl text-text mt-1">
+              <GradientText hoverOnly animationSpeed={2}>Entering Saudi Arabia? We're Here.</GradientText>
+            </h2>
+          </AnimatedSection>
+
+          {/* Main card */}
+          <div className="bg-white rounded-3xl border border-border overflow-hidden shadow-sm">
+            <div className="grid grid-cols-1 lg:grid-cols-[1fr_380px]">
+
+              {/* Left — content */}
+              <AnimatedSection className="p-8 md:p-12 flex flex-col justify-between gap-10">
+
+                {/* Partnership copy */}
+                <div>
+                  <div className="space-y-4 font-body text-[15px] text-text-muted leading-relaxed mb-8">
+                    <p>Market research in the Kingdom demands more than datasets and surveys — it demands someone who understands how business actually gets done in Saudi Arabia.</p>
+                    <p>That's why 4BC Global has partnered with 4SiGHT KSA, combining our research rigour, analytical depth, and technology with their extensive local expertise, field capabilities, and government and corporate networks.</p>
+                  </div>
+
+                  {/* Pull quote */}
+                  <div className="rounded-2xl bg-[#E8A020]/8 border border-[#E8A020]/20 px-6 py-5 mb-8">
+                    <p className="font-heading font-semibold text-[18px] text-text leading-snug">
+                      One partnership. Two advantages. Complete market coverage.
+                    </p>
+                  </div>
+
+                  {/* Dr Adil bio */}
+                  <div className="flex gap-5 items-start">
+                    <div className="w-16 h-16 rounded-2xl overflow-hidden flex-shrink-0 border border-border">
+                      <Image src="/team/dr-adil.png" alt="Dr. Adil Ali M. Al-Najaei" width={64} height={64} className="object-cover object-top w-full h-full" />
+                    </div>
+                    <div>
+                      <p className="font-heading font-bold text-[16px] text-text">Dr. Adil Ali M. Al-Najaei</p>
+                      <p className="font-body text-[12px] text-text-muted mb-2">CEO & Founder, 4SiGHT KSA · Partner, Saudi Arabia</p>
+                      <p className="font-body text-[13px] text-text-muted leading-relaxed">
+                        With over 22 years of executive leadership across Saudi Arabia's public and private sectors, Dr. Adil brings deep, on-the-ground expertise to our operations in the Kingdom. As former Managing Director for global research firms including GfK and Kantar, alongside roles leading ART and MBC's pay-per-view channels, he combines rigorous market intelligence with extensive government and royal advisory experience — including consultation to Prince Sultan Bin Abdulaziz Humanitarian Foundation and multiple government agencies. His unique blend of commercial acumen, media sector knowledge, and high-level strategic relationships helps clients confidently navigate, invest, and scale within the region's most dynamic economy.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Tags */}
+                <div className="flex flex-wrap gap-2">
+                  {['Government Advisory', 'Market Intelligence', 'Royal Advisory', 'Media & Broadcasting', 'KSA Strategy'].map((tag) => (
+                    <span key={tag} className="font-body text-[11px] bg-bg-soft border border-border text-text-muted rounded-full px-3 py-1.5">{tag}</span>
+                  ))}
+                </div>
+              </AnimatedSection>
+
+              {/* Right — photo + 4SiGHT info */}
+              <AnimatedSection delay={0.15} className="flex flex-col">
+                {/* Photo */}
+                <div className="relative flex-1 min-h-[300px] bg-bg-soft">
+                  <Image
+                    src="/team/dr-adil.png"
+                    alt="Dr. Adil Ali M. Al-Najaei"
+                    fill
+                    className="object-cover object-top"
+                  />
+                </div>
+
+                {/* 4SiGHT info panel */}
+                <div className="p-6 border-t border-border bg-bg-soft">
+                  <div className="h-8 w-32 relative mb-3">
+                    <Image src="/brand/4sight-logo.png" alt="4SiGHT KSA" fill className="object-contain object-left" />
+                  </div>
+                  <p className="font-body text-[10px] font-semibold uppercase tracking-[0.12em] text-text-muted mb-3">Established 2009 · Riyadh, Saudi Arabia</p>
+                  <div className="space-y-3">
+                    <div>
+                      <p className="font-body text-[10px] font-semibold uppercase tracking-[0.1em] text-text-muted/60 mb-1.5">🇸🇦 Riyadh</p>
+                      <div className="flex items-start gap-2 font-body text-[12px] text-text-muted mb-1">
+                        <MapPin size={11} className="flex-shrink-0 mt-0.5 text-[#E8A020]" />
+                        <span>Office 703, 7th Floor Aqarya #3, Olaya, Riyadh, KSA</span>
+                      </div>
+                      <div className="flex items-center gap-2 font-body text-[12px] text-text-muted">
+                        <Mail size={11} className="flex-shrink-0 text-[#E8A020]" />
+                        <a href="mailto:info@4sight.sa" className="hover:text-primary transition-colors">info@4sight.sa</a>
+                      </div>
+                    </div>
+                    <div className="border-t border-border pt-3">
+                      <p className="font-body text-[10px] font-semibold uppercase tracking-[0.1em] text-text-muted/60 mb-1.5">🇬🇧 United Kingdom</p>
+                      <div className="flex items-start gap-2 font-body text-[12px] text-text-muted mb-1">
+                        <MapPin size={11} className="flex-shrink-0 mt-0.5 text-[#E8A020]" />
+                        <span>2 Thames Road, Langley, Berkshire, SL3 8DY, UK</span>
+                      </div>
+                      <div className="flex items-center gap-2 font-body text-[12px] text-text-muted">
+                        <Phone size={11} className="flex-shrink-0 text-[#E8A020]" />
+                        <a href="tel:+441753777999" className="hover:text-primary transition-colors">+44 1753 777999</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </AnimatedSection>
+
+            </div>
           </div>
         </div>
       </section>
