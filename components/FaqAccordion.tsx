@@ -19,7 +19,7 @@ const faqs = [
   },
   {
     q: 'Can you handle large-scale research projects?',
-    a: 'Yes. We have executed engagements involving 4,500+ quantitative interviews, 100+ expert IDIs, and 1,500+ GPS-mapped locations — all within single projects. Our network of field partners across MEA enables large-scale execution.',
+    a: `Scale Without Compromise\n\nMany firms can collect data; few can manage complexity across borders without losing rigour. At 4BC Global, our infrastructure handles the region's most ambitious research — from massive quantitative sweeps to intricate B2B engagements spanning multiple countries.\n\nQuantitative at Scale\n• 10,000+ SME respondents across single engagements\n• 1,500+ GPS-mapped data points for precise geospatial intelligence\n• Simultaneous fieldwork across multiple countries with consistent, accountable execution\n\nHigh-Bandwidth B2B & Qualitative\n• 100+ In-Depth Interviews with C-suite executives and subject matter experts\n• Complex market mapping in data-sparse environments\n• Seamless methodological pivots from deep ethnography to broad-scale quantitative work\n\nSingle Point of Accountability (SPA)\nMulti-country research is only valuable if someone owns it end-to-end. We serve as your SPA across the MEA region — managing field partners, data consistency, and quality assurance so you manage one vendor, not six. Whether treating the GCC as a unified market or navigating Africa's diverse landscape, you have one point of contact, one standard of quality, and one partner accountable for results.`,
   },
   {
     q: 'What research methodologies do you use?',
@@ -73,9 +73,35 @@ export default function FaqAccordion() {
                   </div>
                 </button>
                 {open === i && (
-                  <p className="font-body text-sm text-text-muted leading-relaxed pb-4">
-                    {faq.a}
-                  </p>
+                  <div className="font-body text-sm text-text-muted leading-relaxed pb-4 space-y-2">
+                    {faq.a.split('\n\n').map((block, bi) => {
+                      const lines = block.split('\n')
+                      const heading = lines[0]
+                      const bullets = lines.slice(1).filter((l) => l.startsWith('•'))
+                      const prose = lines.slice(1).filter((l) => !l.startsWith('•')).join(' ')
+                      const isBulletBlock = bullets.length > 0
+                      return (
+                        <div key={bi}>
+                          {heading && (
+                            <p className={bi === 0 ? 'font-semibold text-text mb-1' : 'font-semibold text-text mt-3 mb-1'}>
+                              {heading}
+                            </p>
+                          )}
+                          {isBulletBlock && (
+                            <ul className="space-y-1 ml-1">
+                              {bullets.map((b, bj) => (
+                                <li key={bj} className="flex items-start gap-2">
+                                  <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
+                                  <span>{b.replace('• ', '')}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          )}
+                          {prose && <p>{prose}</p>}
+                        </div>
+                      )
+                    })}
+                  </div>
                 )}
               </div>
             ))}
