@@ -604,10 +604,10 @@ export default function AboutPage() {
                 </div>
               </AnimatedSection>
 
-              {/* Right — photo + 4SiGHT info */}
+              {/* Right — photo + 4SiGHT logo */}
               <AnimatedSection delay={0.15} className="flex flex-col">
-                {/* Photo */}
-                <div className="relative flex-1 min-h-[300px] bg-bg-soft">
+                {/* Photo — full height, larger */}
+                <div className="relative flex-1 min-h-[420px] bg-bg-soft">
                   <Image
                     src="/team/dr-adil.png"
                     alt="Dr. Adil Ali M. Al-Najaei"
@@ -616,36 +616,12 @@ export default function AboutPage() {
                   />
                 </div>
 
-                {/* 4SiGHT info panel */}
-                <div className="p-6 border-t border-border bg-bg-soft">
-                  <div className="h-8 w-32 relative mb-3">
+                {/* 4SiGHT logo panel */}
+                <div className="px-8 py-6 border-t border-border bg-white flex items-center gap-4">
+                  <div className="relative h-12 w-44 flex-shrink-0">
                     <Image src="/brand/4sight-logo.png" alt="4SiGHT KSA" fill className="object-contain object-left" />
                   </div>
-                  <p className="font-body text-[10px] font-semibold uppercase tracking-[0.12em] text-text-muted mb-3">Established 2009 · Riyadh, Saudi Arabia</p>
-                  <div className="space-y-3">
-                    <div>
-                      <p className="font-body text-[10px] font-semibold uppercase tracking-[0.1em] text-text-muted/60 mb-1.5">🇸🇦 Riyadh</p>
-                      <div className="flex items-start gap-2 font-body text-[12px] text-text-muted mb-1">
-                        <MapPin size={11} className="flex-shrink-0 mt-0.5 text-[#E8A020]" />
-                        <span>Office 703, 7th Floor Aqarya #3, Olaya, Riyadh, KSA</span>
-                      </div>
-                      <div className="flex items-center gap-2 font-body text-[12px] text-text-muted">
-                        <Mail size={11} className="flex-shrink-0 text-[#E8A020]" />
-                        <a href="mailto:info@4sight.sa" className="hover:text-primary transition-colors">info@4sight.sa</a>
-                      </div>
-                    </div>
-                    <div className="border-t border-border pt-3">
-                      <p className="font-body text-[10px] font-semibold uppercase tracking-[0.1em] text-text-muted/60 mb-1.5">🇬🇧 United Kingdom</p>
-                      <div className="flex items-start gap-2 font-body text-[12px] text-text-muted mb-1">
-                        <MapPin size={11} className="flex-shrink-0 mt-0.5 text-[#E8A020]" />
-                        <span>2 Thames Road, Langley, Berkshire, SL3 8DY, UK</span>
-                      </div>
-                      <div className="flex items-center gap-2 font-body text-[12px] text-text-muted">
-                        <Phone size={11} className="flex-shrink-0 text-[#E8A020]" />
-                        <a href="tel:+441753777999" className="hover:text-primary transition-colors">+44 1753 777999</a>
-                      </div>
-                    </div>
-                  </div>
+                  <p className="font-body text-[11px] text-text-muted leading-snug">Established 2009 · Riyadh, Saudi Arabia</p>
                 </div>
               </AnimatedSection>
 

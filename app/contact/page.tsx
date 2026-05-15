@@ -4,7 +4,7 @@ import { useState } from 'react'
 import {
   MapPin, Mail, Linkedin, ArrowRight, CheckCircle,
   Loader2, Clock, Users, Shield, MessageSquare,
-  ChevronRight,
+  ChevronRight, Phone,
 } from 'lucide-react'
 import AnimatedSection from '@/components/AnimatedSection'
 import GradientText from '@/components/GradientText'
@@ -447,6 +447,35 @@ export default function ContactPage() {
                         </span>
                       </div>
                     ))}
+                  </div>
+
+                  {/* Partner office addresses */}
+                  <div className="mt-5 pt-5 border-t border-border space-y-4">
+                    <p className="font-heading font-semibold text-[10px] text-text-muted uppercase tracking-wider">Partner Offices</p>
+
+                    <div>
+                      <p className="font-body text-[10px] font-semibold uppercase tracking-[0.1em] text-text-muted/60 mb-1.5">🇸🇦 Riyadh, Saudi Arabia</p>
+                      <div className="flex items-start gap-2 font-body text-[12px] text-text-muted mb-1">
+                        <MapPin size={11} className="flex-shrink-0 mt-0.5 text-[#E8A020]" />
+                        <span>Office 703, 7th Floor Aqarya #3, Olaya, Riyadh, KSA</span>
+                      </div>
+                      <div className="flex items-center gap-2 font-body text-[12px] text-text-muted">
+                        <Mail size={11} className="flex-shrink-0 text-[#E8A020]" />
+                        <a href="mailto:info@4sight.sa" className="hover:text-primary transition-colors">info@4sight.sa</a>
+                      </div>
+                    </div>
+
+                    <div>
+                      <p className="font-body text-[10px] font-semibold uppercase tracking-[0.1em] text-text-muted/60 mb-1.5">🇬🇧 United Kingdom</p>
+                      <div className="flex items-start gap-2 font-body text-[12px] text-text-muted mb-1">
+                        <MapPin size={11} className="flex-shrink-0 mt-0.5 text-[#E8A020]" />
+                        <span>2 Thames Road, Langley, Berkshire, SL3 8DY, UK</span>
+                      </div>
+                      <div className="flex items-center gap-2 font-body text-[12px] text-text-muted">
+                        <Phone size={11} className="flex-shrink-0 text-[#E8A020]" />
+                        <a href="tel:+441753777999" className="hover:text-primary transition-colors">+44 1753 777999</a>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </AnimatedSection>
