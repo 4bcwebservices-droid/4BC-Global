@@ -141,12 +141,12 @@ export default function HomePageContent() {
         style={{ background: 'radial-gradient(circle, #2B4A8C 0%, transparent 70%)' }} />
 
       {/* Skyline — anchored to bottom-left */}
-      <div aria-hidden className="absolute bottom-0 left-1/2 -translate-x-1/2 z-[1] pointer-events-none select-none" style={{ height: '72%', width: '90%' }}>
+      <div aria-hidden className="absolute left-1/2 -translate-x-1/2 z-[1] pointer-events-none select-none" style={{ bottom: '-4%', height: '80%', width: '100%' }}>
         <img
           src="/brand/hero-skyline.png"
           alt=""
           className="w-full h-full object-contain object-bottom"
-          style={{ opacity: 0.42, mixBlendMode: 'luminosity' }}
+          style={{ opacity: 0.45, mixBlendMode: 'luminosity' }}
         />
       </div>
 
