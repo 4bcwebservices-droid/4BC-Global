@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import { Search, Users, BarChart2, MapPin, Lightbulb, ArrowRight } from 'lucide-react'
 
@@ -93,11 +93,32 @@ const serviceAreas = [
 
 export default function CapabilitiesBento() {
   const [active, setActive] = useState(0)
+  const [paused, setPaused] = useState(false)
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null)
   const area = serviceAreas[active]
   const Icon = area.icon
 
+  useEffect(() => {
+    if (paused) return
+    intervalRef.current = setInterval(() => {
+      setActive((prev) => (prev + 1) % serviceAreas.length)
+    }, 4000)
+    return () => { if (intervalRef.current) clearInterval(intervalRef.current) }
+  }, [paused, active])
+
+  const handleTabClick = (i: number) => {
+    setActive(i)
+    setPaused(true)
+  }
+
   return (
-    <div className="rounded-3xl overflow-hidden border border-border shadow-sm bg-white">
+    <>
+    <style>{`@keyframes tabProgress { from { width: 0% } to { width: 100% } }`}</style>
+    <div
+      className="rounded-3xl overflow-hidden border border-border shadow-sm bg-white"
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+    >
       {/* ── Tab bar ── */}
       <div className="flex flex-wrap gap-0 border-b border-border bg-bg-soft">
         {serviceAreas.map((s, i) => {
@@ -106,14 +127,23 @@ export default function CapabilitiesBento() {
           return (
             <button
               key={s.id}
-              onClick={() => setActive(i)}
+              onClick={() => handleTabClick(i)}
               className="relative flex items-center gap-2 px-5 py-4 font-body text-[12.5px] font-medium transition-all duration-200 flex-1 justify-center md:justify-start whitespace-nowrap"
               style={{
                 color: isActive ? s.color : '#94a3b8',
-                borderBottom: isActive ? `2px solid ${s.color}` : '2px solid transparent',
                 background: isActive ? '#ffffff' : 'transparent',
               }}
             >
+              {isActive && (
+                <span
+                  className="absolute bottom-0 left-0 h-[2px] rounded-full"
+                  style={{
+                    backgroundColor: s.color,
+                    width: paused ? '100%' : '100%',
+                    animation: paused ? 'none' : 'tabProgress 4s linear',
+                  }}
+                />
+              )}
               <TabIcon size={14} style={{ flexShrink: 0 }} />
               <span className="hidden sm:block">{s.title}</span>
             </button>
@@ -186,7 +216,7 @@ export default function CapabilitiesBento() {
           return (
             <button
               key={s.id}
-              onClick={() => setActive(i)}
+              onClick={() => handleTabClick(i)}
               className="flex flex-col items-center gap-1.5 py-4 px-3 transition-all duration-200"
               style={{ background: isActive ? `${s.color}10` : 'transparent' }}
             >
@@ -199,5 +229,6 @@ export default function CapabilitiesBento() {
         })}
       </div>
     </div>
+    </>
   )
 }
