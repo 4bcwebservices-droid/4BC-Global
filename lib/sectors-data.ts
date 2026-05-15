@@ -273,7 +273,7 @@ export const sectors: Sector[] = [
     gradientFrom: '#475569',
     accentHex: '#475569',
     icon: Factory,
-    image: '/sectors/industrial.jpg',
+    image: '/sectors/industrial-manufacturing.jpg',
   },
   {
     slug: 'transport-logistics',

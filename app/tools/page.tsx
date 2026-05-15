@@ -64,7 +64,7 @@ const tools = [
     id: 'impactiq',
     logoH: 'h-12 sm:h-28', logoW: 'w-full max-w-[400px]',
     logo: '/brand/impactiq-logo.png',
-    image: '/capabilities/impact-assessment.png',
+    image: '/capabilities/impactiq-new.jpg',
     name: '4BC ImpactIQ',
     subtitle: 'The Socio-Economic Impact Framework',
     tagline: 'A robust, data-driven framework designed to rigorously quantify and demonstrate an organization\'s ultimate value beyond pure profit.',
