@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 const researchTypes = [
   'Market Sizing & Demand Estimation',
   'Competitive Intelligence',
-  'Customer Satisfaction & NPS',
+  'CX & NPS',
   'Market Entry Strategy',
   'Channel & Network Planning',
   'Feasibility Studies',
@@ -200,7 +200,7 @@ export default function SectorsPage() {
               },
               {
                 tag: 'Oil & Gas',
-                title: 'Customer Satisfaction Study for a Major O&G Business in UAE',
+                title: 'CX Study for a Major O&G Business in UAE',
                 excerpt: 'Annual CX program across 10+ business lines. Findings contributed to the Dubai Quality Award.',
                 accent: '#D97706',
               },

@@ -461,7 +461,7 @@ export default function ContactPage() {
                       </div>
                       <div className="flex items-center gap-2 font-body text-[12px] text-text-muted">
                         <Mail size={11} className="flex-shrink-0 text-[#E8A020]" />
-                        <a href="mailto:info@4sight.sa" className="hover:text-primary transition-colors">info@4sight.sa</a>
+                        <a href="mailto:info@4bcglobal.com" className="hover:text-primary transition-colors">info@4bcglobal.com</a>
                       </div>
                     </div>
 
@@ -469,11 +469,15 @@ export default function ContactPage() {
                       <p className="font-body text-[10px] font-semibold uppercase tracking-[0.1em] text-text-muted/60 mb-1.5">🇬🇧 United Kingdom</p>
                       <div className="flex items-start gap-2 font-body text-[12px] text-text-muted mb-1">
                         <MapPin size={11} className="flex-shrink-0 mt-0.5 text-[#E8A020]" />
-                        <span>2 Thames Road, Langley, Berkshire, SL3 8DY, UK</span>
+                        <span>2 Thames Road, Langley, Slough, SL3 8DY, United Kingdom</span>
                       </div>
                       <div className="flex items-center gap-2 font-body text-[12px] text-text-muted">
                         <Phone size={11} className="flex-shrink-0 text-[#E8A020]" />
                         <a href="tel:+441753777999" className="hover:text-primary transition-colors">+44 1753 777999</a>
+                      </div>
+                      <div className="flex items-center gap-2 font-body text-[12px] text-text-muted">
+                        <Mail size={11} className="flex-shrink-0 text-[#E8A020]" />
+                        <a href="mailto:info@4bcglobal.com" className="hover:text-primary transition-colors">info@4bcglobal.com</a>
                       </div>
                     </div>
                   </div>

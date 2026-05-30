@@ -38,9 +38,10 @@ node_modules
 *.dmg
 sf-pro-display/
 
-# source images (copies live in public/images/)
+# source images (copies live in public/)
 bslady.png
 9856fa2ed296d9426fa7869fc33ad24a.jpg
+"hero image.png"
 
 # working documents / temp files
 *.pdf

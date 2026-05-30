@@ -334,7 +334,7 @@ export const caseStudies = [
     id: 'cs-07',
     sector: 'Oil & Gas',
     image: '/images/case-oilgas.jpg',
-    title: 'Customer Satisfaction Study for a Major O&G Business in the UAE',
+    title: 'CX Study for a Major O&G Business in the UAE',
     geography: 'UAE',
     segment: 'Decision makers among customer companies',
     methodology: 'Quantitative Interviews (CATI, Online): 300+',

@@ -29,9 +29,9 @@ const serviceAreas = [
   {
     id: 'customer-experience',
     icon: Users,
-    title: 'Customer Satisfaction & Experience',
+    title: 'CX & Experience',
     color: '#C45FA0',
-    image: '/capabilities/customer-satisfaction.png',
+    image: '/capabilities/cx.jpg',
     href: '/services#customer-experience',
     desc: 'Understanding what customers truly think — not just what they say.',
     services: [
@@ -49,7 +49,7 @@ const serviceAreas = [
     icon: BarChart2,
     title: 'Impact Assessment',
     color: '#E8A020',
-    image: '/capabilities/impact-assessment.png',
+    image: '/capabilities/impact-assessment.jpg',
     href: '/services#impact-assessment',
     desc: 'Evidence-backed measurement of economic, social, and reputational value.',
     services: [
@@ -64,7 +64,7 @@ const serviceAreas = [
     icon: MapPin,
     title: 'Geolocation-Based Services',
     color: '#3BBFA3',
-    image: '/capabilities/geolocation.png',
+    image: '/capabilities/geolocation.jpg',
     href: '/services#geolocation-services',
     desc: 'Spatial intelligence that turns location data into network strategy, powered by our proprietary 4BC Landscape platform.',
     services: [
@@ -79,12 +79,12 @@ const serviceAreas = [
     icon: Lightbulb,
     title: 'Other Specialist Areas',
     color: '#C45FA0',
-    image: '/capabilities/specialist-areas.png',
+    image: '/capabilities/advisory.jpg',
     href: '/services#specialist-areas',
     desc: 'Proprietary platforms and specialist methodologies for complex research needs.',
     services: [
       'Concept Evaluation',
-      'InFuse — Secondary research-based intelligence solution',
+      'InfUSE — Secondary research-based intelligence solution',
       'Counterfeit Assessment',
       'Co-creation Workshops for Business Strategy',
     ],

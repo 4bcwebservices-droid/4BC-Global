@@ -121,10 +121,10 @@ const serviceAreas = [
   {
     id: 'customer-experience',
     icon: Users,
-    title: 'Customer Satisfaction & Experience',
+    title: 'CX & Experience',
     color: '#7D2B5E',
     bgLight: '#FDF4FF',
-    image: '/capabilities/customer-satisfaction.png',
+    image: '/capabilities/cx.jpg',
     services: [
       'Customer Journey Mapping',
       'Customer Loyalty / Satisfaction',
@@ -141,7 +141,7 @@ const serviceAreas = [
     title: 'Impact Assessment',
     color: '#E8A020',
     bgLight: '#FFFBEB',
-    image: '/capabilities/impact-assessment.png',
+    image: '/capabilities/impact-assessment.jpg',
     imagePosition: 'center bottom',
     services: [
       'Corporate Reputation Assessment',
@@ -156,7 +156,7 @@ const serviceAreas = [
     title: 'Geolocation-Based Services',
     color: '#2B4A8C',
     bgLight: '#EEF2FF',
-    image: '/capabilities/geolocation.png',
+    image: '/capabilities/geolocation.jpg',
     services: [
       'Catchment Area Assessment',
       'Network Planning — New Location Evaluation',
@@ -170,9 +170,9 @@ const serviceAreas = [
     title: 'Other Specialist Areas',
     color: '#7D2B5E',
     bgLight: '#FDF4FF',
-    image: '/capabilities/specialist-areas.png',
+    image: '/capabilities/advisory.jpg',
     services: [
-      'InFuse — Secondary research-based intelligence solution',
+      'InfUSE — Secondary research-based intelligence solution',
       'Counterfeit Assessment',
       'Co-creation Workshops for Business Strategy',
     ],

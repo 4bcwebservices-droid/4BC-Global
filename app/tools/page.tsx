@@ -7,7 +7,7 @@ import Grainient from '@/components/Grainient'
 
 export const metadata: Metadata = {
   title: 'Proprietary Tools — 4BC Global',
-  description: '4BC InFuse, Landscape, and ImpactIQ — intelligence platforms for competitive profiling, network planning, and impact measurement.',
+  description: '4BC InfUSE, Landscape, and ImpactIQ — intelligence platforms for competitive profiling, network planning, and impact measurement.',
 }
 
 const tools = [
@@ -16,10 +16,10 @@ const tools = [
     logoH: 'h-10 sm:h-20', logoW: 'w-full max-w-[320px]',
     logo: '/brand/infuse-logo.png',
     image: '/capabilities/business-research.jpg',
-    name: '4BC InFuse',
+    name: '4BC InfUSE',
     subtitle: 'The Intelligence Accelerator',
     tagline: 'A supercharged secondary research platform designed to accelerate desk intelligence and baseline strategy.',
-    strategicImperative: 'Leadership teams cannot wait months to understand a shifting competitive baseline. Before deploying extensive primary research or entering a new market, organizations require an immediate, high-fidelity read on the industry landscape. InFuse eliminates the blind spots, providing the foundational clarity required to make swift, informed strategic maneuvers.',
+    strategicImperative: 'Leadership teams cannot wait months to understand a shifting competitive baseline. Before deploying extensive primary research or entering a new market, organizations require an immediate, high-fidelity read on the industry landscape. InfUSE eliminates the blind spots, providing the foundational clarity required to make swift, informed strategic maneuvers.',
     useCases: [
       { name: 'Rapid Competitive Profiling', desc: 'Deep-dive analysis into competitor positioning, market share, and operational footprints.' },
       { name: 'Precision Benchmarking', desc: 'Objective evaluations of industry standards, pricing structures, and best practices.' },
@@ -75,9 +75,9 @@ const tools = [
       { name: 'The 5-Step Activation Methodology', desc: 'Scoping → Data Mapping → Measurement & Modeling → Synthesis → Activation. A comprehensive end-to-end process aligned with overarching organizational vision and aligned with SDG (Sustainable Development Goals).' },
     ],
     stats: [
-      { value: 'Eco.', label: 'Impact' },
+      { value: 'Economic', label: 'Impact' },
       { value: 'Social', label: 'Impact' },
-      { value: 'Env.', label: 'Impact' },
+      { value: 'Environment', label: 'Impact' },
     ],
     type: 'Impact Assessment Framework',
     accent: '#E8A020',
@@ -90,12 +90,11 @@ export default function ToolsPage() {
   return (
     <>
       {/* ── Hero ── */}
-      <section className="relative min-h-[440px] md:min-h-[520px] flex items-end overflow-hidden bg-[#0A1628]">
-        <div className="absolute inset-0 pointer-events-none select-none">
-          <img src="/images/tools-hero.jpg" alt="" aria-hidden className="absolute inset-0 w-full h-full object-cover object-center" />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0A1628]/80 via-[#0A1628]/55 to-[#0A1628]/85" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0A1628]/60 via-transparent to-transparent" />
+      <section className="relative min-h-[440px] md:min-h-[520px] flex items-end overflow-hidden">
+        <div className="absolute inset-0">
+          <Grainient color1="#351e6b" color2="#9a4788" color3="#b19f2b" timeSpeed={2.35} colorBalance={-0.47} warpStrength={1.9} warpFrequency={4.2} warpSpeed={0.5} warpAmplitude={26} blendAngle={28} blendSoftness={0.39} rotationAmount={260} noiseScale={2} grainAmount={0.1} grainScale={2} contrast={1.5} gamma={1} saturation={1} zoom={0.9} />
         </div>
+        <div className="absolute inset-0 bg-gradient-to-b from-dark/40 via-dark/25 to-dark/50 pointer-events-none" />
         <div className="container-content relative z-10 pb-16 pt-32 md:pt-40">
           <AnimatedSection>
             <span className="font-heading font-semibold text-[11px] tracking-[0.12em] uppercase text-accent mb-4 inline-block">

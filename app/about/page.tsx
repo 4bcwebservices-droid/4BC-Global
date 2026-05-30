@@ -50,9 +50,27 @@ const values = [
   },
   {
     num: '05',
-    title: 'Bilingual Authority',
-    desc: 'Fluent in English and Arabic. Deeply fluent in cultural translation — understanding what data means in the human context of each market.',
+    title: 'Multilingual by Practice',
+    desc: 'We operate fluently in English, Arabic, and French — and across the cultural registers each language carries. In markets where meaning lives between the lines, language capability is a research capability.',
     accent: '#4A3AAA',
+  },
+  {
+    num: '06',
+    title: 'Integrity Without Compromise',
+    desc: 'We do not misrepresent our work, our methods, or our findings — to clients or to respondents. Every engagement is conducted with full transparency, honest reporting, and an unwavering commitment to the truth of what the data shows.',
+    accent: '#C0392B',
+  },
+  {
+    num: '07',
+    title: 'Confidentiality as Standard',
+    desc: 'What you share with us stays with us. We maintain strict confidentiality for every client engagement — and equal protection for every research respondent. No data is ever shared, repurposed, or disclosed without explicit consent. We adhere to the ESOMAR Code of Conduct and operate in full alignment with applicable data protection regulations.',
+    accent: '#0F7FAA',
+  },
+  {
+    num: '08',
+    title: 'Data Responsibility',
+    desc: 'We handle data with the same rigour we apply to research design. Our practices align with international data protection standards — including GDPR principles and regional data governance frameworks — ensuring that how we collect, store, and process information is as defensible as what we conclude from it.',
+    accent: '#2C7A4B',
   },
 ]
 
@@ -277,7 +295,7 @@ export default function AboutPage() {
                 </h2>
               </div>
               <p className="font-body text-[14px] text-text-muted max-w-xs md:text-right leading-relaxed">
-                Five principles embedded in every engagement we take on.
+                Eight principles embedded in every engagement we take on.
               </p>
             </div>
           </AnimatedSection>
@@ -393,10 +411,11 @@ export default function AboutPage() {
                   },
                   {
                     flag: '🇬🇧',
-                    city: 'Berkshire, UK',
+                    city: 'Slough, United Kingdom',
                     label: 'UK Office',
-                    address: '2 Thames Road, Langley, Berkshire, SL3 8DY',
+                    address: '2 Thames Road, Langley, Slough, SL3 8DY',
                     phone: '+44 1753 777999',
+                    email: 'info@4bcglobal.com',
                     accent: '#7D2B5E',
                   },
                   {
@@ -404,7 +423,7 @@ export default function AboutPage() {
                     city: 'Riyadh, KSA',
                     label: 'KSA Partner Office',
                     address: 'Office 703, 7th Floor Aqarya #3, Olaya, Riyadh, Kingdom of Saudi Arabia',
-                    email: 'info@4sight.sa',
+                    email: 'info@4bcglobal.com',
                     accent: '#E8A020',
                   },
                 ].map((office) => (
@@ -501,7 +520,7 @@ export default function AboutPage() {
                 {[
                   { num: '10+', label: 'Sectors', accent: '#2B4A8C' },
                   { num: '450+', label: 'Engagements', accent: '#7D2B5E' },
-                  { num: '6', label: 'Research Categories', accent: '#E8A020' },
+                  { num: '10+', label: 'Research Capabilities', accent: '#E8A020' },
                 ].map((s) => (
                   <div key={s.label} className="py-6 text-center">
                     <div className="font-heading font-black text-[2.2rem] leading-none" style={{ color: s.accent }}>{s.num}</div>
@@ -510,11 +529,16 @@ export default function AboutPage() {
                 ))}
               </div>
               <div className="px-8 py-5 bg-bg-soft">
-                <p className="font-body text-[11px] text-text-muted uppercase tracking-[0.1em] mb-3">Research categories spanning</p>
+                <p className="font-body text-[11px] text-text-muted uppercase tracking-[0.1em] mb-3">Research capabilities spanning</p>
                 <div className="flex flex-wrap gap-2">
                   {['Market Assessment', 'Competitive Intelligence', 'Customer Understanding', 'Channel Strategy', 'Feasibility Studies', 'And Beyond'].map((cat) => (
                     <span key={cat} className="font-body text-[12px] text-text-muted bg-white border border-border rounded-full px-3 py-1">{cat}</span>
                   ))}
+                </div>
+                <div className="mt-4">
+                  <a href="/services#business-lifecycle-advisory" className="inline-flex items-center gap-1.5 font-body text-[12px] text-primary font-medium hover:underline">
+                    Business Lifecycle Advisory <ArrowRight size={11} />
+                  </a>
                 </div>
               </div>
             </div>
@@ -590,7 +614,7 @@ export default function AboutPage() {
                       <p className="font-heading font-bold text-[16px] text-text">Dr. Adil Ali M. Al-Najaei</p>
                       <p className="font-body text-[12px] text-text-muted mb-2">CEO & Founder, 4SiGHT KSA · Partner, Saudi Arabia</p>
                       <p className="font-body text-[13px] text-text-muted leading-relaxed">
-                        With over 22 years of executive leadership across Saudi Arabia's public and private sectors, Dr. Adil brings deep, on-the-ground expertise to our operations in the Kingdom. As former Managing Director for global research firms including GfK and Kantar, alongside roles leading ART and MBC's pay-per-view channels, he combines rigorous market intelligence with extensive government and royal advisory experience — including consultation to Prince Sultan Bin Abdulaziz Humanitarian Foundation and multiple government agencies. His unique blend of commercial acumen, media sector knowledge, and high-level strategic relationships helps clients confidently navigate, invest, and scale within the region's most dynamic economy.
+                        With over 25 years of executive leadership across Saudi Arabia's public and private sectors, Dr. Adil brings deep, on-the-ground expertise to our operations in the Kingdom. As former Managing Director for global research firms including GfK and Kantar, alongside roles leading ART and MBC's pay-per-view channels, he combines rigorous market intelligence with extensive government and royal advisory experience — including consultation to Prince Sultan Bin Abdulaziz Humanitarian Foundation and multiple government agencies. His unique blend of commercial acumen, media sector knowledge, and high-level strategic relationships helps clients confidently navigate, invest, and scale within the region's most dynamic economy.
                       </p>
                     </div>
                   </div>
@@ -686,6 +710,13 @@ export default function AboutPage() {
               >
                 Explore Our Case Studies <ArrowRight size={15} />
               </Link>
+            </div>
+            <div className="mt-10 pt-8 border-t border-white/15 flex flex-wrap items-center justify-center gap-6 text-white/50 font-body text-[12px]">
+              <span className="flex items-center gap-2"><MapPin size={11} /> Dubai, United Arab Emirates</span>
+              <a href="tel:+97143595123" className="flex items-center gap-2 hover:text-white/80 transition-colors"><Phone size={11} /> +971 4 3595123</a>
+              <a href="mailto:info@4bcglobal.com" className="flex items-center gap-2 hover:text-white/80 transition-colors"><Mail size={11} /> info@4bcglobal.com</a>
+              <span className="text-white/15 hidden sm:inline">·</span>
+              <a href="https://theleaders.network/" target="_blank" rel="noopener noreferrer" className="hover:text-white/80 transition-colors">A part of Leaders Network ↗</a>
             </div>
           </AnimatedSection>
         </div>

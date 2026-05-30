@@ -78,8 +78,19 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-3 text-xs text-gray-500">
-          <p>© 2025 4BC Global. All Rights Reserved.</p>
+        <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
+          <div className="flex flex-col sm:flex-row items-center gap-3">
+            <p>© 2025 4BC Global. All Rights Reserved.</p>
+            <span className="hidden sm:inline text-white/15">·</span>
+            <a
+              href="https://theleaders.network/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-gray-300 transition-colors"
+            >
+              A part of Leaders Network ↗
+            </a>
+          </div>
           <div className="flex gap-4">
             <a href="#" className="hover:text-gray-300 transition-colors">Terms of Use</a>
             <a href="#" className="hover:text-gray-300 transition-colors">Privacy Policy</a>
