@@ -333,7 +333,7 @@ export const caseStudies = [
   {
     id: 'cs-07',
     sector: 'Oil & Gas',
-    image: '/images/case-oilgas.jpg',
+    image: '/capabilities/cx.jpg',
     title: 'CX Study for a Major O&G Business in the UAE',
     geography: 'UAE',
     segment: 'Decision makers among customer companies',
