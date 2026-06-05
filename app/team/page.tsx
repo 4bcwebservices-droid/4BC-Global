@@ -19,7 +19,7 @@ const team = [
   {
     name: 'Siva Sankar',
     title: 'Director, Insights & Strategy',
-    image: '/team/siva-sankar.jpg',
+    image: '/team/siva-sankar.png',
     shortBio: 'Over 15 years of experience in business and industrial research with extensive exposure across the Middle East, North Africa, India, China, Russia, Turkey, and other international markets.',
     fullBio: 'Siva brings over 15 years of experience in business and industrial research, with extensive exposure across the Middle East, North Africa, India, China, Russia, Turkey, and other international markets. Over the years, he has worked with clients across a wide range of sectors, supporting strategic decision-making through in-depth market intelligence and advisory-led research solutions.\n\nHis expertise spans market sizing and opportunity assessment, market entry and expansion strategy, competitive intelligence, customer satisfaction studies, mystery shopping, impact assessment, benchmarking, channel and distribution analysis, network development/geo-mapping, and regulatory landscape assessment. He has also led multiple large-scale business and industrial studies focused on identifying growth opportunities, evaluating market potential, understanding competitive dynamics, and supporting long-term strategic planning.\n\nSiva has worked closely with both public and private sector organizations. His experience includes managing multi-country research engagements, developing tailored research frameworks, and delivering insights to senior stakeholders across industries such as energy, automotive, retail, education, financial services, entertainment, manufacturing, and infrastructure.\n\nHe also brings along a strong understanding of regional business environments and consumer dynamics.',
     expertise: ['Market Sizing', 'Competitive Intelligence', 'Impact Assessment', 'Geo-mapping & Network Development', 'Customer Experience', 'Mystery Shopping'],
@@ -27,7 +27,7 @@ const team = [
   {
     name: 'Sandeep Vaddey',
     title: 'Director, Insights & Strategy',
-    image: '/team/sandeep-vaddey.jpg',
+    image: '/team/sandeep-vaddey.png',
     shortBio: 'A business research and consulting professional with over 20 years of experience across the Middle East, Africa, Asia, Turkey, and Russia, spanning Oil & Gas, Energy, Construction, ICT, Retail, Real Estate, Automotive, and more.',
     fullBio: 'Sandeep is a business research and consulting professional with over 20 years of experience across the Middle East, Africa, Asia, Turkey, and Russia. Throughout his career, he has partnered with organizations across a broad spectrum of industries including Oil & Gas, Energy, Construction, Petrochemicals, General Engineering, ICT, Electronics, Retail, Real Estate, FMCG, Automotive, and Industrial sectors.\n\nOver the years, Sandeep has worked with leading consulting and research organizations such as Frost & Sullivan, Ventures Middle East, and Kantar, where he spent nearly a decade leading and managing strategic consulting and market intelligence assignments for multinational and regional clients. In addition, he has also worked on the corporate side in a Strategy role at ACWA Power, where he was involved in driving strategic initiatives, supporting business planning, and contributing to the company\'s regional growth agenda. This combination of consulting and corporate experience gives him a well-rounded perspective on both advisory and execution-driven business environments.\n\nSandeep\'s core areas of expertise include Market and Competitive Assessments, Market Entry and Expansion Strategies, Industry Analysis, New Product Development, Customer Insights, Geo-Mapping, Opportunity Assessment, and Feasibility Studies. He has significant experience in designing and executing qualitative, quantitative, and desk research studies, translating complex data into actionable business insights and strategic recommendations. He has advised a wide range of clients, including blue-chip multinational corporations, regional conglomerates, government entities, regulators, ministries, trade development organizations, NGOs, Special Economic Zones, and investment promotion agencies. Sandeep has closely collaborated with C-suite executives, Strategy Directors, Insights and Research Managers, Marketing leaders, and Business Development teams to support critical decision-making and long-term strategic planning.',
     expertise: ['Feasibility Studies', 'Competitive Intelligence', 'New Product Development', 'Geo-mapping & Network Development'],
@@ -35,7 +35,7 @@ const team = [
   {
     name: 'Angad Kenghe',
     title: 'Senior Manager, Insights & Strategy',
-    image: '/team/angad-kenghe.jpg',
+    image: '/team/angad-kenghe.png',
     shortBio: '5+ years of diverse research experience across consumer research, business research, videometrics, and retail panel-based methodology across MEA, US, Europe, and India.',
     fullBio: 'Angad has over 5+ years of diverse research experience across consumer research, business research, videometrics, and retail panel-based methodology. He has worked with small & medium businesses, as well as large players, spanning MEA, US, Europe, and India regions, and has helped clients with projects across market overview, industry analysis, competitor landscape, new product development, mystery shopping and customer experience.',
     expertise: ['Consumer Research', 'Mystery Shopping', 'Customer Experience', 'Secondary Research'],
@@ -67,7 +67,7 @@ const team = [
   {
     name: 'Hiteshkumar Mahyavanshi',
     title: 'Associate Manager, Finance & Admin',
-    image: '/team/hiteshkumar-mahyavanshi.jpg',
+    image: '/team/hiteshkumar-mahyavanshi.png',
     shortBio: 'Hitesh is a seasoned finance professional responsible for the overall financial management, monthly reporting, and audits, while also overseeing administrative functions and operational governance.',
     fullBio: 'Hitesh is a seasoned finance professional responsible for the overall financial management, monthly reporting, and audits. Beyond finance, he also oversees the administrative functions, ensuring operational effectiveness and governance.',
     expertise: ['Finance', 'Administration'],
@@ -83,7 +83,7 @@ const team = [
   {
     name: 'Brenda Oyetomi',
     title: 'Consultant',
-    image: '/team/brenda-oyetomi.jpg',
+    image: '/team/brenda-oyetomi.png',
     shortBio: 'Managing Research Partner in Africa with over 14 years of experience delivering strategic insights to private and public sector companies across FMCG, FinTech, Financial Institutions, Medical Research, and government entities.',
     fullBio: 'Brenda is our Managing Research Partner in Africa with over 14 years experience in delivering strategic insights to companies across private and public sector companies.\n\nShe has worked with FMCG, FinTech, Financial Institutions, Medical Research companies and government entities to bring insights that influence strategy for clients thereby creating long lasting partnerships. Brenda is an advocate for self-fulfilment and — in turn — wants to contribute significantly in and to an organisation with a clear vision and mandate for progress. Some of the areas of expertise include Brand Health, Usage and Attitudes, Concept evaluation, Competition analysis, Project Management and Report writing.\n\nBrenda is proficient in qualitative and quantitative research, with strong knowledge and information management capabilities.',
     expertise: ['Brand Health', 'Usage & Attitudes', 'Competitive Intelligence'],
@@ -107,7 +107,7 @@ const team = [
   {
     name: 'Dinesh Nair',
     title: 'Partner, DGIC – Leaders Network',
-    image: '/team/dinesh-nair.jpg',
+    image: '/team/dinesh-nair.png',
     shortBio: 'Founder of Drive Global Insights & Consultancy with nearly two decades of market research experience across the Middle East, Africa and India, specializing deeply in automotive research.',
     fullBio: 'Dinesh is the Founder of Drive Global Insights & Consultancy (DGIC) and brings nearly two decades of market research experience across the Middle East, Africa and India. His cross-sector expertise includes Automotive, Retail, BFSI, Gaming and Real Estate, with deep specialization in automotive research covering customer experience, brand health tracking, car clinics, pricing (vehicle, parts and service) and aftersales retention.',
     expertise: ['Automotive Research', 'Pricing', 'Aftersales & Aftermarket', 'Car Clinics', 'Brand Health Tracking', 'Customer Experience', 'Segmentation', 'Gaming Research'],
