@@ -267,5 +267,15 @@ export default function Grainient({
     centerX, centerY, zoom, color1, color2, color3,
   ])
 
-  return <div ref={containerRef} className={`grainient-container ${className}`.trim()} />
+  return (
+    <div
+      ref={containerRef}
+      className={`grainient-container ${className}`.trim()}
+      style={{
+        backgroundImage: 'url(/brand/hero-gradient.webp)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}
+    />
+  )
 }
