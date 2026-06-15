@@ -15,7 +15,7 @@ export const caseStudies = [
   {
     id: 'cs-01',
     sector: 'Retail',
-    image: '/images/case-grocery-network.jpg',
+    image: '/images/case-grocery-network.webp',
     title: 'Identifying Potential Locations to Expand a Grocery Store Network',
     geography: 'Dubai and Abu Dhabi, UAE',
     segment: 'Grocery shops, Consumers',
@@ -29,7 +29,7 @@ export const caseStudies = [
   {
     id: 'cs-03',
     sector: 'Retail',
-    image: '/images/case-horeca-oils.jpg',
+    image: '/images/case-horeca-oils.webp',
     title: 'Usage & Attitudes of HORECA Towards Oils in Saudi Arabia',
     geography: 'Saudi Arabia (Riyadh, Jeddah, Dammam)',
     segment: 'HORECA',
@@ -43,7 +43,7 @@ export const caseStudies = [
   {
     id: 'cs-09',
     sector: 'Retail',
-    image: '/images/case-plant-based-food.png',
+    image: '/images/case-plant-based-food.webp',
     title: 'Concept Evaluation for Plant-Based Food Products in UAE',
     geography: 'UAE',
     segment: 'General consumers, Health-conscious consumers',
@@ -57,7 +57,7 @@ export const caseStudies = [
   {
     id: 'cs-10',
     sector: 'Retail',
-    image: '/images/case-premium-tea.jpg',
+    image: '/images/case-premium-tea.webp',
     title: 'Channel Research for Premium Tea Across HORECA in UAE',
     geography: 'UAE',
     segment: 'HORECA operators — Hotels, Cafés, Restaurants',
@@ -71,7 +71,7 @@ export const caseStudies = [
   {
     id: 'cs-11',
     sector: 'Retail',
-    image: '/images/case-tea-market.jpg',
+    image: '/images/case-tea-market.webp',
     title: 'Market Sizing and Opportunity Assessment of Tea in Egypt and Pakistan',
     geography: 'Egypt and Pakistan',
     segment: 'General consumers, Trade channels',
@@ -99,7 +99,7 @@ export const caseStudies = [
   {
     id: 'cs-13',
     sector: 'Retail',
-    image: '/images/case-ready-to-eat.jpg',
+    image: '/images/case-ready-to-eat.webp',
     title: 'Market Assessment for Ready-to-Eat Food Products in Bahrain',
     geography: 'Bahrain',
     segment: 'General consumers, Modern trade buyers',
@@ -115,7 +115,7 @@ export const caseStudies = [
   {
     id: 'cs-08',
     sector: 'Real Estate',
-    image: '/images/case-free-zones.jpg',
+    image: '/images/case-free-zones.webp',
     title: 'Competitive Market Intelligence Study on Various Free Zones in the UAE',
     geography: 'UAE',
     segment: 'Offices, Industrial Units, Land, Flexi Desk',
@@ -143,7 +143,7 @@ export const caseStudies = [
   {
     id: 'cs-15',
     sector: 'Real Estate',
-    image: '/images/case-pedestrian-dubai.jpg',
+    image: '/images/case-pedestrian-dubai.webp',
     title: 'Walking Habits and Pedestrian Flow Study in Dubai',
     geography: 'Dubai, UAE',
     segment: 'General consumers, Pedestrians',
@@ -157,7 +157,7 @@ export const caseStudies = [
   {
     id: 'cs-16',
     sector: 'Real Estate',
-    image: '/images/case-free-zones.jpg',
+    image: '/images/case-free-zones.webp',
     title: 'Campaign Recall and Effectiveness Study for a UAE Free Zone',
     geography: 'UAE',
     segment: 'Business owners, Decision makers, SMEs',
@@ -171,7 +171,7 @@ export const caseStudies = [
   {
     id: 'cs-17',
     sector: 'Real Estate',
-    image: '/images/case-building-automation.jpg',
+    image: '/images/case-building-automation.webp',
     title: 'Growth Strategy for Building Automation Solutions in UAE',
     geography: 'UAE',
     segment: 'Building owners, Facility managers, Developers',
@@ -187,7 +187,7 @@ export const caseStudies = [
   {
     id: 'cs-04',
     sector: 'Industrial',
-    image: '/images/case-channel-strategy.jpg',
+    image: '/images/case-channel-strategy.webp',
     title: 'Develop Channel Strategy for a Large Business Group in UAE',
     geography: 'UAE',
     segment: 'Dealers, Consumers',
@@ -201,7 +201,7 @@ export const caseStudies = [
   {
     id: 'cs-06',
     sector: 'Industrial',
-    image: '/images/case-concrete-pipe.jpg',
+    image: '/images/case-concrete-pipe.webp',
     title: 'Market Feasibility for Setting Up a Concrete Pipe Manufacturing Unit in Oman',
     geography: 'UAE, Oman and Saudi Arabia',
     segment: 'Manufacturers, EPC Consultants and Contractors',
@@ -215,7 +215,7 @@ export const caseStudies = [
   {
     id: 'cs-18',
     sector: 'Industrial',
-    image: '/images/case-construction-equipment.jpg',
+    image: '/images/case-construction-equipment.webp',
     title: 'Market Sizing and Competitive Landscape for Construction Equipment in UAE',
     geography: 'UAE',
     segment: 'Contractors, Equipment dealers, Rental companies',
@@ -229,7 +229,7 @@ export const caseStudies = [
   {
     id: 'cs-19',
     sector: 'Industrial',
-    image: '/images/case-fire-safety.jpg',
+    image: '/images/case-fire-safety.webp',
     title: 'Market Research for Fire Extinguisher Products in UAE',
     geography: 'UAE',
     segment: 'Distributors, Facilities managers, End users',
@@ -243,7 +243,7 @@ export const caseStudies = [
   {
     id: 'cs-20',
     sector: 'Industrial',
-    image: '/images/case-wood-paints.jpg',
+    image: '/images/case-wood-paints.webp',
     title: 'Market Study for Wood Paints and Coatings Across GCC',
     geography: 'GCC (UAE, Saudi Arabia, Qatar, Kuwait)',
     segment: 'Contractors, Painters, Retailers, Specifiers',
@@ -259,8 +259,8 @@ export const caseStudies = [
   {
     id: 'cs-02',
     sector: 'Transport',
-    image: '/images/case-minibus-new.png',
-    title: 'Opportunity Assessment of Digitalization of Minibus Taxis in South Africa',
+    image: '/images/case-minibus-new.webp',
+    title: 'Opportunity Assessment of Payment Digitalization Among Minibus Taxis in South Africa',
     geography: 'South Africa',
     segment: 'Commuters, Taxi Owners, Taxi Associations, Taxi Financiers',
     methodology: 'Qualitative IDIs: 50+ · Quantitative Interviews: 500+',
@@ -273,7 +273,7 @@ export const caseStudies = [
   {
     id: 'cs-21',
     sector: 'Transport',
-    image: '/images/case-truck-tyres.jpg',
+    image: '/images/case-truck-tyres.webp',
     title: 'Market Sizing and Dealer Optimization for Truck and Bus Tyres',
     geography: 'UAE, Saudi Arabia and Egypt',
     segment: 'Fleet operators, Dealers, Distributors',
@@ -287,7 +287,7 @@ export const caseStudies = [
   {
     id: 'cs-23',
     sector: 'Transport',
-    image: '/images/case-used-cars.jpg',
+    image: '/images/case-used-cars.webp',
     title: 'Industry Landscape of the Used Car Market Across UAE, Afghanistan, DRC and Yemen',
     geography: 'UAE, Afghanistan, DRC and Yemen',
     segment: 'Dealers, Car buyers, Auction operators',
@@ -301,7 +301,7 @@ export const caseStudies = [
   {
     id: 'cs-24',
     sector: 'Transport',
-    image: '/images/case-seaport.jpg',
+    image: '/images/case-seaport.webp',
     title: 'Competitive Intelligence on Port Management and Operations Across the Middle East',
     geography: 'Middle East',
     segment: 'Port operators, Shipping companies, Logistics providers',
@@ -317,7 +317,7 @@ export const caseStudies = [
   {
     id: 'cs-22',
     sector: 'Automotive',
-    image: '/images/case-connected-car.jpg',
+    image: '/images/case-connected-car.webp',
     title: 'Brand Positioning and Usage of Connected Car Services in UAE and Saudi Arabia',
     geography: 'UAE and Saudi Arabia',
     segment: 'Car owners, Fleet managers',
@@ -333,7 +333,7 @@ export const caseStudies = [
   {
     id: 'cs-07',
     sector: 'Oil & Gas',
-    image: '/capabilities/cx.jpg',
+    image: '/capabilities/cx.webp',
     title: 'CX Study for a Major O&G Business in the UAE',
     geography: 'UAE',
     segment: 'Decision makers among customer companies',
@@ -347,7 +347,7 @@ export const caseStudies = [
   {
     id: 'cs-25',
     sector: 'Oil & Gas',
-    image: '/images/case-fuel-station.jpg',
+    image: '/images/case-fuel-station.webp',
     title: 'Mystery Shopping and Process Compliance Audit for Fuel Stations in UAE',
     geography: 'UAE',
     segment: 'Fuel station staff, Customers',
@@ -361,7 +361,7 @@ export const caseStudies = [
   {
     id: 'cs-26',
     sector: 'Oil & Gas',
-    image: '/images/case-fuel-oil.jpg',
+    image: '/images/case-fuel-oil.webp',
     title: 'Market Assessment for DGO, Fuel Oil and Bitumen in UAE',
     geography: 'UAE',
     segment: 'Industrial buyers, Logistics companies, Construction firms',
@@ -375,7 +375,7 @@ export const caseStudies = [
   {
     id: 'cs-27',
     sector: 'Oil & Gas',
-    image: '/images/case-lubricants.jpg',
+    image: '/images/case-lubricants.webp',
     title: 'Market Sizing and Shares for Lubricants in UAE',
     geography: 'UAE',
     segment: 'Distributors, Fleet operators, Workshops',
@@ -389,7 +389,7 @@ export const caseStudies = [
   {
     id: 'cs-28',
     sector: 'Oil & Gas',
-    image: '/images/case-lpg-propane.jpg',
+    image: '/images/case-lpg-propane.webp',
     title: 'Market Assessment for LPG and Propane Gases in UAE',
     geography: 'UAE',
     segment: 'Residential and commercial consumers, Distributors',
@@ -405,7 +405,7 @@ export const caseStudies = [
   {
     id: 'cs-05',
     sector: 'Government',
-    image: '/images/case-remittance.jpg',
+    image: '/images/case-remittance.webp',
     title: 'Market Assessment of Illegal Remittance in Saudi Arabia',
     geography: 'Saudi Arabia',
     segment: 'General consumers (expats)',
@@ -433,7 +433,7 @@ export const caseStudies = [
   {
     id: 'cs-30',
     sector: 'Finance',
-    image: '/images/case-mobile-money.jpg',
+    image: '/images/case-mobile-money.webp',
     title: 'Market Research for a Mobile Money Application in UAE',
     geography: 'UAE',
     segment: 'Expats, General consumers',
@@ -447,7 +447,7 @@ export const caseStudies = [
   {
     id: 'cs-31',
     sector: 'Finance',
-    image: '/images/case-corporate-cards.jpg',
+    image: '/images/case-corporate-cards.webp',
     title: 'Market Sizing and Opportunity Assessment for Corporate Credit Cards Among SMEs',
     geography: 'UAE, Saudi Arabia and Egypt',
     segment: 'SME owners, Finance managers',
@@ -461,7 +461,7 @@ export const caseStudies = [
   {
     id: 'cs-32',
     sector: 'Finance',
-    image: '/images/case-branch-cx.jpg',
+    image: '/images/case-branch-cx.webp',
     title: 'Customer Experience Research Across Bank Branches in UAE',
     geography: 'UAE',
     segment: 'Retail banking customers, Branch visitors',
@@ -491,7 +491,7 @@ export const caseStudies = [
   {
     id: 'cs-34',
     sector: 'Telecom',
-    image: '/images/case-voip.jpg',
+    image: '/images/case-voip.webp',
     title: 'Competitive Intelligence on VOIP Calling Services in UAE',
     geography: 'UAE',
     segment: 'SMEs, Individual users',
@@ -505,7 +505,7 @@ export const caseStudies = [
   {
     id: 'cs-35',
     sector: 'Telecom',
-    image: '/images/case-wireless-presentation.jpg',
+    image: '/images/case-wireless-presentation.webp',
     title: 'Market Sizing and Demand Estimation for Wireless Presentation Systems in UAE',
     geography: 'UAE',
     segment: 'Corporate businesses, Education institutions',
@@ -519,7 +519,7 @@ export const caseStudies = [
   {
     id: 'cs-36',
     sector: 'Telecom',
-    image: '/images/case-partner-identification.jpg',
+    image: '/images/case-partner-identification.webp',
     title: 'Partner Identification and Evaluation for Water Heater Distribution in Egypt',
     geography: 'Egypt',
     segment: 'Distributors, Retailers, Trade partners',
@@ -533,7 +533,7 @@ export const caseStudies = [
   {
     id: 'cs-37',
     sector: 'Telecom',
-    image: '/images/case-ict-qatar.jpg',
+    image: '/images/case-ict-qatar.webp',
     title: 'ICT Sector Landscape and Usage Study Among SMEs in Qatar',
     geography: 'Qatar',
     segment: 'SMEs, IT decision makers',

@@ -103,7 +103,7 @@ const serviceAreas = [
     title: 'Business Research',
     color: '#2B4A8C',
     bgLight: '#EEF2FF',
-    image: '/capabilities/business-research.jpg',
+    image: '/capabilities/business-research.webp',
     services: [
       'Marketing Strategy & Concept Evaluation',
       'Segmentation Studies',
@@ -124,7 +124,7 @@ const serviceAreas = [
     title: 'CX & Experience',
     color: '#7D2B5E',
     bgLight: '#FDF4FF',
-    image: '/capabilities/cx.jpg',
+    image: '/capabilities/cx.webp',
     services: [
       'Customer Journey Mapping',
       'Customer Loyalty / Satisfaction',
@@ -141,13 +141,16 @@ const serviceAreas = [
     title: 'Impact Assessment',
     color: '#E8A020',
     bgLight: '#FFFBEB',
-    image: '/capabilities/impact-assessment.jpg',
+    image: '/capabilities/impact-assessment.webp',
     imagePosition: 'center bottom',
     services: [
       'Corporate Reputation Assessment',
       'Economic Impact Assessment (EIA)',
       'Event Performance — Footfall & Economic Impact',
       'Social Impact Assessment (SIA)',
+      'GRI (Global Reporting Initiative)',
+      'Social Return on Investment (SROI)',
+      'Materiality Assessment',
     ],
   },
   {
@@ -156,7 +159,7 @@ const serviceAreas = [
     title: 'Geolocation-Based Services',
     color: '#2B4A8C',
     bgLight: '#EEF2FF',
-    image: '/capabilities/geolocation.jpg',
+    image: '/capabilities/geolocation.webp',
     services: [
       'Catchment Area Assessment',
       'Network Planning — New Location Evaluation',
@@ -170,9 +173,9 @@ const serviceAreas = [
     title: 'Other Specialist Areas',
     color: '#7D2B5E',
     bgLight: '#FDF4FF',
-    image: '/capabilities/advisory.jpg',
+    image: '/capabilities/advisory.webp',
     services: [
-      'InfUSE — Secondary research-based intelligence solution',
+      'inFUSE — Secondary research-based intelligence solution',
       'Counterfeit Assessment',
       'Co-creation Workshops for Business Strategy',
     ],

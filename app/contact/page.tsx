@@ -63,11 +63,7 @@ const steps = [
 
 const officeLocations = [
   { city: 'Dubai', country: 'UAE', primary: true },
-  { city: 'Riyadh', country: 'Saudi Arabia', primary: false },
-  { city: 'Nairobi', country: 'Kenya', primary: false },
-  { city: 'Mumbai', country: 'India', primary: false },
-  { city: 'Algiers', country: 'Algeria', primary: false },
-  { city: 'Cape Town', country: 'South Africa', primary: false },
+  { city: 'London', country: 'United Kingdom', primary: false },
 ]
 
 export default function ContactPage() {
@@ -449,15 +445,15 @@ export default function ContactPage() {
                     ))}
                   </div>
 
-                  {/* Partner office addresses */}
+                  {/* Our office addresses */}
                   <div className="mt-5 pt-5 border-t border-border space-y-4">
-                    <p className="font-heading font-semibold text-[10px] text-text-muted uppercase tracking-wider">Partner Offices</p>
+                    <p className="font-heading font-semibold text-[10px] text-text-muted uppercase tracking-wider">Our Offices</p>
 
                     <div>
-                      <p className="font-body text-[10px] font-semibold uppercase tracking-[0.1em] text-text-muted/60 mb-1.5">🇸🇦 Riyadh, Saudi Arabia</p>
-                      <div className="flex items-start gap-2 font-body text-[12px] text-text-muted mb-1">
-                        <MapPin size={11} className="flex-shrink-0 mt-0.5 text-[#E8A020]" />
-                        <span>Office 703, 7th Floor Aqarya #3, Olaya, Riyadh, KSA</span>
+                      <p className="font-body text-[10px] font-semibold uppercase tracking-[0.1em] text-text-muted/60 mb-1.5">🇦🇪 Dubai, UAE</p>
+                      <div className="flex items-center gap-2 font-body text-[12px] text-text-muted mb-1">
+                        <Phone size={11} className="flex-shrink-0 text-[#E8A020]" />
+                        <a href="tel:+97143595123" className="hover:text-primary transition-colors">+971 4 3595123</a>
                       </div>
                       <div className="flex items-center gap-2 font-body text-[12px] text-text-muted">
                         <Mail size={11} className="flex-shrink-0 text-[#E8A020]" />
@@ -471,9 +467,26 @@ export default function ContactPage() {
                         <MapPin size={11} className="flex-shrink-0 mt-0.5 text-[#E8A020]" />
                         <span>2 Thames Road, Langley, Slough, SL3 8DY, United Kingdom</span>
                       </div>
-                      <div className="flex items-center gap-2 font-body text-[12px] text-text-muted">
+                      <div className="flex items-center gap-2 font-body text-[12px] text-text-muted mb-1">
                         <Phone size={11} className="flex-shrink-0 text-[#E8A020]" />
                         <a href="tel:+441753777999" className="hover:text-primary transition-colors">+44 1753 777999</a>
+                      </div>
+                      <div className="flex items-center gap-2 font-body text-[12px] text-text-muted">
+                        <Mail size={11} className="flex-shrink-0 text-[#E8A020]" />
+                        <a href="mailto:info@4bcglobal.com" className="hover:text-primary transition-colors">info@4bcglobal.com</a>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Partner office address */}
+                  <div className="mt-5 pt-5 border-t border-border space-y-4">
+                    <p className="font-heading font-semibold text-[10px] text-text-muted uppercase tracking-wider">Partner Office</p>
+
+                    <div>
+                      <p className="font-body text-[10px] font-semibold uppercase tracking-[0.1em] text-text-muted/60 mb-1.5">🇸🇦 Riyadh, Saudi Arabia</p>
+                      <div className="flex items-start gap-2 font-body text-[12px] text-text-muted mb-1">
+                        <MapPin size={11} className="flex-shrink-0 mt-0.5 text-[#E8A020]" />
+                        <span>Office 703, 7th Floor Aqarya #3, Olaya, Riyadh, KSA</span>
                       </div>
                       <div className="flex items-center gap-2 font-body text-[12px] text-text-muted">
                         <Mail size={11} className="flex-shrink-0 text-[#E8A020]" />

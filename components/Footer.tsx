@@ -80,21 +80,29 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
           <div className="flex flex-col sm:flex-row items-center gap-3">
-            <p>© 2025 4BC Global. All Rights Reserved.</p>
+            <p>© 4BC Global. All Rights Reserved.</p>
             <span className="hidden sm:inline text-white/15">·</span>
             <a
               href="https://theleaders.network/"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-gray-300 transition-colors"
+              className="flex items-center gap-2 hover:text-gray-300 transition-colors"
             >
-              A part of Leaders Network ↗
+              <Image src="/brand/leaders-network-logo.png" alt="The Leaders Network" width={80} height={20} className="h-4 w-auto brightness-0 invert opacity-50 hover:opacity-75 transition-opacity" />
+              <span>A part of Leaders Network ↗</span>
             </a>
           </div>
           <div className="flex gap-4">
-            <a href="#" className="hover:text-gray-300 transition-colors">Terms of Use</a>
-            <a href="#" className="hover:text-gray-300 transition-colors">Privacy Policy</a>
+            <a href="/terms" className="hover:text-gray-300 transition-colors">Terms of Use</a>
+            <a href="/privacy" className="hover:text-gray-300 transition-colors">Privacy Policy</a>
           </div>
+        </div>
+
+        {/* Disclaimer */}
+        <div className="border-t border-white/5 mt-6 pt-5">
+          <p className="font-body text-[10px] text-gray-600 leading-relaxed">
+            <span className="font-semibold text-gray-500">Disclaimer:</span> The project experience, case studies, and credentials presented on this website reflect the collective experience of the 4BC Global leadership and consulting team. Certain projects were delivered by team members in their professional capacities prior to the establishment of 4BC Global in 2020, including during their tenure with other organisations such as Kantar. Where referenced, such projects are included to demonstrate the team&apos;s expertise and experience and do not imply that they were contracted directly through 4BC Global.
+          </p>
         </div>
       </div>
     </footer>

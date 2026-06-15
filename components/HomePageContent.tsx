@@ -42,13 +42,14 @@ const approachPrinciples = [
 
 const tools = [
   {
-    name: '4BC InfUSE',
+    name: '4BC inFUSE',
     tagline: 'Your secondary intelligence, supercharged.',
     desc: 'A dynamic platform for rapid industry landscaping and competitive profiling across MEA.',
     type: 'Secondary Research Platform',
     href: '/tools#infuse',
     logo: '/brand/infuse-logo.png',
-    logoScale: 0.72,
+    logoH: 'h-7',
+    logoScale: 1,
     accent: 'border-primary group-hover:border-primary',
     tag: 'bg-primary/15 text-primary',
   },
@@ -59,6 +60,7 @@ const tools = [
     type: 'Geo-Intelligence Tool',
     href: '/tools#landscape',
     logo: '/brand/landscape-logo.png',
+    logoH: 'h-10',
     logoScale: 1,
     accent: 'border-plum group-hover:border-plum',
     tag: 'bg-plum/15 text-plum',
@@ -70,6 +72,7 @@ const tools = [
     type: 'Impact Assessment Framework',
     href: '/tools#impactiq',
     logo: '/brand/impactiq-logo.png',
+    logoH: 'h-10',
     logoScale: 1,
     accent: 'border-accent group-hover:border-accent',
     tag: 'bg-accent/15 text-accent',
@@ -143,7 +146,7 @@ export default function HomePageContent() {
       {/* Skyline — anchored to bottom-left */}
       <div aria-hidden className="absolute left-1/2 -translate-x-1/2 z-[1] pointer-events-none select-none" style={{ bottom: '-4%', height: '80%', width: '100%' }}>
         <img
-          src="/brand/hero-skyline.png"
+          src="/brand/hero-skyline.webp"
           alt=""
           className="w-full h-full object-contain object-bottom"
           style={{ opacity: 0.45, mixBlendMode: 'luminosity' }}
@@ -328,7 +331,7 @@ export default function HomePageContent() {
       <section className="relative section-padding overflow-hidden bg-white">
         {/* Skyline decorative backdrop */}
         <div className="absolute bottom-0 left-0 right-0 h-[72%] pointer-events-none select-none">
-          <img src="/brand/skyline.png" alt="" aria-hidden className="w-full h-full object-contain object-bottom opacity-35" />
+          <img src="/brand/skyline.webp" alt="" aria-hidden className="w-full h-full object-contain object-bottom opacity-35" />
           <div className="absolute inset-0 bg-gradient-to-b from-white via-white/40 to-transparent" />
         </div>
 
@@ -343,7 +346,7 @@ export default function HomePageContent() {
                 We embed proprietary AI tools and geo-spatial mapping into our workflows to turn raw regional data into strategic assets.
               </p>
               <p className="font-body text-body-sm text-text-muted mb-10 max-w-[50ch]">
-                Three platforms — InfUSE, Landscape, and ImpactIQ — give clients a faster, sharper path to decisions.
+                Three platforms — inFUSE, Landscape, and ImpactIQ — give clients a faster, sharper path to decisions.
               </p>
               <Link
                 href="/tools"
@@ -363,7 +366,7 @@ export default function HomePageContent() {
                   >
                     <div className="flex items-start justify-between gap-4">
                       <div className="flex-1 min-w-0">
-                        <div className="mb-3 h-10 w-44 flex items-center overflow-hidden">
+                        <div className={`mb-3 ${tool.logoH} w-44 flex items-center overflow-hidden`}>
                           <Image src={tool.logo} alt={tool.name} width={176} height={40} className="h-full w-full object-contain object-left origin-left transition-none" style={{ transform: `scale(${tool.logoScale})` }} />
                         </div>
                         <p className="font-body text-[13px] text-text-muted mb-2">{tool.tagline}</p>

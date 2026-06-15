@@ -69,7 +69,7 @@ const values = [
   {
     num: '08',
     title: 'Data Responsibility',
-    desc: 'We handle data with the same rigour we apply to research design. Our practices align with international data protection standards — including GDPR principles and regional data governance frameworks — ensuring that how we collect, store, and process information is as defensible as what we conclude from it.',
+    desc: 'We handle data with the same rigour we apply to research design. Our practices align with international data protection standards — including GDPR guidelines and regional data governance frameworks — ensuring that how we collect, store, and process information is as defensible as what we conclude from it.',
     accent: '#2C7A4B',
   },
 ]
@@ -105,7 +105,7 @@ const team: TeamMember[] = [
   {
     name: 'Sukhdev Singh',
     title: 'Partner, Insights & Strategy',
-    photo: '/team/sukhdev-singh.png',
+    photo: '/team/sukhdev-singh.webp',
     shortBio: 'With over 25 years of experience across the Middle East, Africa, Asia, and Far-East Asian markets, Sukhdev is one of the region\'s most seasoned business researchers.',
     fullBio: 'With over 25 years of experience across the Middle East, Africa, Asia, and Far-East Asian markets, Sukhdev is one of the region\'s most seasoned business researchers — known for getting beneath the surface of a client\'s challenge and surfacing insights that genuinely move strategy forward.\n\nHis expertise spans the full breadth of what rigorous research demands: understanding how an industry works end-to-end, mapping go-to-market dynamics, and designing the customer experience (CX) research that tells organisations what their customers and stakeholders truly think — not just what they say. He has applied this across market entry strategy, B2B research, and government sector advisory, working with organisations ranging from multinationals to public sector institutions across MEA.\n\nThe practice grew because clients kept coming back — and sending others. Each engagement built on the last, deepening relationships and expanding the range of questions 4BC was trusted to answer.\n\nA researcher at heart, Sukhdev is as comfortable conducting an in-depth interview with a shopfloor worker as he is in a boardroom with a CEO. That breadth of human curiosity — and the discipline to listen without agenda — is what drives the quality of insight that clients rely on.',
     expertise: ['Market Entry Strategy', 'B2B Research', 'Government Sector', 'CX Research', 'Stakeholder Satisfaction'],
@@ -113,7 +113,7 @@ const team: TeamMember[] = [
   {
     name: 'Siva Sankar',
     title: 'Director, Insights & Strategy',
-    photo: '/team/siva-sankar.png',
+    photo: '/team/siva-sankar.webp',
     shortBio: 'Over 15 years of experience in business and industrial research with extensive exposure across the Middle East, North Africa, India, China, Russia, Turkey, and other international markets.',
     fullBio: 'Siva brings over 15 years of experience in business and industrial research, with extensive exposure across the Middle East, North Africa, India, China, Russia, Turkey, and other international markets. Over the years, he has worked with clients across a wide range of sectors, supporting strategic decision-making through in-depth market intelligence and advisory-led research solutions.\n\nHis expertise spans market sizing and opportunity assessment, market entry and expansion strategy, competitive intelligence, customer satisfaction studies, mystery shopping, impact assessment, benchmarking, channel and distribution analysis, network development/geo-mapping, and regulatory landscape assessment. He has also led multiple large-scale business and industrial studies focused on identifying growth opportunities, evaluating market potential, understanding competitive dynamics, and supporting long-term strategic planning.\n\nSiva has worked closely with both public and private sector organizations. His experience includes managing multi-country research engagements, developing tailored research frameworks, and delivering insights to senior stakeholders across industries such as energy, automotive, retail, education, financial services, entertainment, manufacturing, and infrastructure.\n\nHe also brings along a strong understanding of regional business environments and consumer dynamics.',
     expertise: ['Market Sizing', 'Competitive Intelligence', 'Impact Assessment', 'Geo-mapping & Network Development', 'Customer Experience', 'Mystery Shopping'],
@@ -121,7 +121,7 @@ const team: TeamMember[] = [
   {
     name: 'Sandeep Vaddey',
     title: 'Director, Insights & Strategy',
-    photo: '/team/sandeep-vaddey.png',
+    photo: '/team/sandeep-vaddey.webp',
     shortBio: 'A business research and consulting professional with over 20 years of experience across the Middle East, Africa, Asia, Turkey, and Russia, spanning Oil & Gas, Energy, Construction, ICT, Retail, Real Estate, Automotive, and more.',
     fullBio: 'Sandeep is a business research and consulting professional with over 20 years of experience across the Middle East, Africa, Asia, Turkey, and Russia. Throughout his career, he has partnered with organizations across a broad spectrum of industries including Oil & Gas, Energy, Construction, Petrochemicals, General Engineering, ICT, Electronics, Retail, Real Estate, FMCG, Automotive, and Industrial sectors.\n\nOver the years, Sandeep has worked with leading consulting and research organizations such as Frost & Sullivan, Ventures Middle East, and Kantar, where he spent nearly a decade leading and managing strategic consulting and market intelligence assignments for multinational and regional clients. In addition, he has also worked on the corporate side in a Strategy role at ACWA Power, where he was involved in driving strategic initiatives, supporting business planning, and contributing to the company\'s regional growth agenda. This combination of consulting and corporate experience gives him a well-rounded perspective on both advisory and execution-driven business environments.\n\nSandeep\'s core areas of expertise include Market and Competitive Assessments, Market Entry and Expansion Strategies, Industry Analysis, New Product Development, Customer Insights, Geo-Mapping, Opportunity Assessment, and Feasibility Studies. He has advised a wide range of clients, including blue-chip multinational corporations, regional conglomerates, government entities, regulators, ministries, trade development organizations, NGOs, Special Economic Zones, and investment promotion agencies.',
     expertise: ['Feasibility Studies', 'Competitive Intelligence', 'New Product Development', 'Geo-mapping & Network Development'],
@@ -129,7 +129,7 @@ const team: TeamMember[] = [
   {
     name: 'Angad Kenghe',
     title: 'Senior Manager, Insights & Strategy',
-    photo: '/team/angad-kenghe.png',
+    photo: '/team/angad-kenghe.webp',
     shortBio: '5+ years of diverse research experience across consumer research, business research, videometrics, and retail panel-based methodology across MEA, US, Europe, and India.',
     fullBio: 'Angad has over 5+ years of diverse research experience across consumer research, business research, videometrics, and retail panel-based methodology. He has worked with small & medium businesses, as well as large players, spanning MEA, US, Europe, and India regions, and has helped clients with projects across market overview, industry analysis, competitor landscape, new product development, mystery shopping and customer experience.',
     expertise: ['Consumer Research', 'Mystery Shopping', 'Customer Experience', 'Secondary Research'],
@@ -137,7 +137,7 @@ const team: TeamMember[] = [
   {
     name: 'Tarun Sinhal',
     title: 'Senior Consultant',
-    photo: '/team/tarun-sinhal.png',
+    photo: '/team/tarun-sinhal.webp',
     shortBio: '18+ years of experience in Market Research across Middle East, Africa, India. Expert in Branding, Communication, Demand Estimation, Pricing, and Channel Dynamics.',
     fullBio: 'Tarun possesses over 18 years of experience in Market Research across Middle East, Africa, India, including exposure to research projects in North America. He has worked on custom research projects across Branding, Communication, Demand Estimation, Pricing, New Product Development, Channel Dynamics, and Market Landscape. Key clients include Unilever, Daimler, LG, Samsung, Kia Motors, Al-Futtaim, du, Etisalat, and Government entities.',
     expertise: ['Branding Research', 'Demand Estimation', 'Pricing Studies', 'Channel Dynamics'],
@@ -145,7 +145,7 @@ const team: TeamMember[] = [
   {
     name: 'Anu Param',
     title: 'Sr. Project Management Executive',
-    photo: '/team/anu-param.png',
+    photo: '/team/anu-param.webp',
     shortBio: '15+ years in the MR industry. End-to-end client servicing across Telecom, Finance, Retail, and Auto.',
     fullBio: 'Anu has over 15 years in the MR industry, working within Business Consulting since 2020. She is responsible for end-to-end client servicing from project management through final reports — covering questionnaire scripting, interviewer briefing, fieldwork quality monitoring, vendor management, and client coordination across Telecom, Financial Services, Retail, and Auto.',
     expertise: ['Project Management', 'Field Operations', 'Questionnaire Design', 'Client Coordination'],
@@ -153,7 +153,7 @@ const team: TeamMember[] = [
   {
     name: 'Vamsi Ganti',
     title: 'Senior Consultant',
-    photo: '/team/vamsi-ganti.png',
+    photo: '/team/vamsi-ganti.webp',
     shortBio: '15+ years specializing in Customer Experience — relationship assessment, mystery shopping, employee engagement.',
     fullBio: 'Vamsi brings more than 15 years of specialization in the Customer Experience domain with experience in relationship assessment, mystery shopping, and employee engagement studies. He has developed CX programs across Telecom, Retail, Oil & Gas, Automotive, SEZ, Finance, and Regulatory bodies — and conducts client engagement workshops to drive CX adoption across organizations.',
     expertise: ['Customer Experience', 'Mystery Shopping', 'Employee Engagement', 'CX Workshops'],
@@ -161,7 +161,7 @@ const team: TeamMember[] = [
   {
     name: 'Hiteshkumar Mahyavanshi',
     title: 'Associate Manager, Finance & Admin',
-    photo: '/team/hiteshkumar-mahyavanshi.png',
+    photo: '/team/hiteshkumar-mahyavanshi.webp',
     shortBio: 'Hitesh is a seasoned finance professional responsible for the overall financial management, monthly reporting, and audits, while also overseeing administrative functions and operational governance.',
     fullBio: 'Hitesh is a seasoned finance professional responsible for the overall financial management, monthly reporting, and audits. Beyond finance, he also oversees the administrative functions, ensuring operational effectiveness and governance.',
     expertise: ['Finance', 'Administration'],
@@ -169,7 +169,7 @@ const team: TeamMember[] = [
   {
     name: 'Pascale Haddad Djabulu',
     title: 'Consultant',
-    photo: '/team/pascale-haddad.png',
+    photo: '/team/pascale-haddad.webp',
     shortBio: 'Multidisciplinary consultant and education professional with over two decades of experience across the Middle East and sub-Saharan Africa, specializing in music, entertainment, education, and the creative industry sectors.',
     fullBio: 'Pascale is a multidisciplinary consultant and education professional with over two decades of experience across the Middle East and sub-Saharan Africa, specializing in the music, entertainment, education, and creative industry sectors. Pascale has worked across a range of strategic, research, and stakeholder engagement initiatives supporting both public and private sector organizations.\n\nHer expertise includes qualitative research, stakeholder interviews and moderation, ecosystem mapping, audience and consumer understanding, socio-cultural and impact-focused studies, benchmarking, and sector development initiatives. Pascale has contributed to projects involving government entities, ministries, educational institutions, cultural organizations, and music industry stakeholders across the region, supporting initiatives related to policy development, sector growth, talent development, and creative economy expansion.\n\nAlongside her consulting work, Pascale has held leadership and advisory roles across educational and cultural initiatives, including arts education strategy, curriculum development, talent identification frameworks, artist engagement programs, and creative capacity-building initiatives.\n\nShe is fluent in Arabic, English, and French, and is recognized for her strong regional insight, cross-cultural perspective, and ability to connect strategic research with real-world industry and creative practice.',
     expertise: ['Qualitative Research', 'Impact Assessment', 'Benchmarking'],
@@ -177,7 +177,7 @@ const team: TeamMember[] = [
   {
     name: 'Brenda Oyetomi',
     title: 'Consultant',
-    photo: '/team/brenda-oyetomi.png',
+    photo: '/team/brenda-oyetomi.webp',
     shortBio: 'Managing Research Partner in Africa with over 14 years of experience delivering strategic insights to private and public sector companies across FMCG, FinTech, Financial Institutions, Medical Research, and government entities.',
     fullBio: 'Brenda is our Managing Research Partner in Africa with over 14 years experience in delivering strategic insights to companies across private and public sector companies.\n\nShe has worked with FMCG, FinTech, Financial Institutions, Medical Research companies and government entities to bring insights that influence strategy for clients thereby creating long lasting partnerships. Some of the areas of expertise include Brand Health, Usage and Attitudes, Concept evaluation, Competition analysis, Project Management and Report writing.\n\nBrenda is proficient in qualitative and quantitative research, with strong knowledge and information management capabilities.',
     expertise: ['Brand Health', 'Usage & Attitudes', 'Competitive Intelligence'],
@@ -185,7 +185,7 @@ const team: TeamMember[] = [
   {
     name: 'Anjan Lahiri',
     title: 'Partner, askPlus – Leaders Network',
-    photo: '/team/anjan-lahiri.png',
+    photo: '/team/anjan-lahiri.webp',
     shortBio: 'Nearly 30 years of marketing research experience across Asia, Middle East, and Africa, specializing in cross-industry market research and large multi-country segmentation, tracking, and pricing studies.',
     fullBio: 'Anjan brings over nearly 30 years of marketing research experience across Asia, Middle East, and Africa. He is experienced in cross-industry market research and has managed large multi-country Segmentation studies, set up and managed multi-country Continuous Tracking studies, complex Pricing & Portfolio Optimization studies, apart from other tactical studies such as Product and Pack tests across multiple markets.',
     expertise: ['Segmentation', 'Pricing & Portfolio', 'Product Testing / Pack Testing'],
@@ -193,7 +193,7 @@ const team: TeamMember[] = [
   {
     name: 'Arup Bose',
     title: 'Partner, askPlus – Leaders Network',
-    photo: '/team/arup-bose.png',
+    photo: '/team/arup-bose.webp',
     shortBio: 'Client relationship professional with a proven track record in global organizations spanning Europe, Asia, Middle East & Africa, with deep expertise in Brand & Communication research and large-scale market sizing.',
     fullBio: 'Arup is a Client Relationship professional with a proven track record in global organizations spanning Europe, Asia, Middle East & Africa, where he has successfully led large client engagements both at Global and Regional levels. He has extensive experience in Brand & Communication research, Segmentation and large-scale market sizing studies across multiple sectors and geographies.',
     expertise: ['Brand & Communication', 'Market Sizing'],
@@ -201,7 +201,7 @@ const team: TeamMember[] = [
   {
     name: 'Dinesh Nair',
     title: 'Partner, DGIC – Leaders Network',
-    photo: '/team/dinesh-nair.png',
+    photo: '/team/dinesh-nair.webp',
     shortBio: 'Founder of Drive Global Insights & Consultancy with nearly two decades of market research experience across the Middle East, Africa and India, specializing deeply in automotive research.',
     fullBio: 'Dinesh is the Founder of Drive Global Insights & Consultancy (DGIC) and brings nearly two decades of market research experience across the Middle East, Africa and India. His cross-sector expertise includes Automotive, Retail, BFSI, Gaming and Real Estate, with deep specialization in automotive research covering customer experience, brand health tracking, car clinics, pricing (vehicle, parts and service) and aftersales retention.',
     expertise: ['Automotive Research', 'Pricing', 'Aftersales & Aftermarket', 'Car Clinics', 'Brand Health Tracking', 'Customer Experience', 'Segmentation', 'Gaming Research'],
@@ -297,7 +297,7 @@ export default function AboutPage() {
                 <div className="space-y-0">
                   {[
                     { year: '2007', title: 'The Beginning', desc: 'A focused team inside Kantar MENA sets a new standard for MEA intelligence.' },
-                    { year: '2013', title: 'Regional Leadership', desc: 'Become Kantar MENA\'s fastest-growing and most profitable research unit.' },
+                    { year: '2013', title: 'Regional Leadership', desc: 'Become Kantar MENA\'s fastest-growing and most sought-after research unit.' },
                     { year: '2020', title: '4BC Global Founded', desc: 'The entire team steps out as one — people, clients, methodologies, expertise.' },
                     { year: 'Now', title: 'Built For What\'s Next', desc: '450+ engagements. 40+ markets. Still evolving.' },
                   ].map((m, i, arr) => (
@@ -455,6 +455,7 @@ export default function AboutPage() {
                     label: 'Head Office',
                     address: 'Dubai, United Arab Emirates',
                     phone: '+971 4 3595123',
+                    email: 'info@4bcglobal.com',
                     accent: '#2B4A8C',
                   },
                   {
@@ -483,16 +484,18 @@ export default function AboutPage() {
                         <span className="font-body text-[10px] font-semibold uppercase tracking-[0.1em] rounded-full px-2 py-0.5" style={{ backgroundColor: `${office.accent}15`, color: office.accent }}>{office.label}</span>
                       </div>
                       <p className="font-body text-[12.5px] text-text-muted leading-snug mb-1.5">{office.address}</p>
-                      {office.phone && (
-                        <a href={`tel:${office.phone.replace(/\s/g, '')}`} className="inline-flex items-center gap-1.5 font-body text-[12px] text-text-muted hover:text-primary transition-colors">
-                          <Phone size={11} /> {office.phone}
-                        </a>
-                      )}
-                      {office.email && (
-                        <a href={`mailto:${office.email}`} className="inline-flex items-center gap-1.5 font-body text-[12px] text-text-muted hover:text-primary transition-colors">
-                          <Mail size={11} /> {office.email}
-                        </a>
-                      )}
+                      <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
+                        {office.phone && (
+                          <a href={`tel:${office.phone.replace(/\s/g, '')}`} className="inline-flex items-center gap-1.5 font-body text-[12px] text-text-muted hover:text-primary transition-colors">
+                            <Phone size={11} /> {office.phone}
+                          </a>
+                        )}
+                        {office.email && (
+                          <a href={`mailto:${office.email}`} className="inline-flex items-center gap-1.5 font-body text-[12px] text-text-muted hover:text-primary transition-colors">
+                            <Mail size={11} /> {office.email}
+                          </a>
+                        )}
+                      </div>
                     </div>
                   </div>
                 ))}
@@ -656,7 +659,7 @@ export default function AboutPage() {
                   {/* Dr Adil bio */}
                   <div className="flex gap-5 items-start">
                     <div className="w-16 h-16 rounded-2xl overflow-hidden flex-shrink-0 border border-border">
-                      <Image src="/team/dr-adil.png" alt="Dr. Adil Ali M. Al-Najaei" width={64} height={64} className="object-cover object-top w-full h-full" />
+                      <Image src="/team/dr-adil.webp" alt="Dr. Adil Ali M. Al-Najaei" width={64} height={64} className="object-cover object-top w-full h-full" />
                     </div>
                     <div>
                       <p className="font-heading font-bold text-[16px] text-text">Dr. Adil Ali M. Al-Najaei</p>
@@ -681,7 +684,7 @@ export default function AboutPage() {
                 {/* Photo — full height, larger */}
                 <div className="relative flex-1 min-h-[420px] bg-bg-soft">
                   <Image
-                    src="/team/dr-adil.png"
+                    src="/team/dr-adil.webp"
                     alt="Dr. Adil Ali M. Al-Najaei"
                     fill
                     className="object-cover object-top"
@@ -691,7 +694,7 @@ export default function AboutPage() {
                 {/* 4SiGHT logo panel */}
                 <div className="px-8 py-6 border-t border-border bg-white flex items-center gap-4">
                   <div className="relative h-12 w-44 flex-shrink-0">
-                    <Image src="/brand/4sight-logo.png" alt="4SiGHT KSA" fill className="object-contain object-left" />
+                    <Image src="/brand/4sight-logo.webp" alt="4SiGHT KSA" fill className="object-contain object-left" />
                   </div>
                   <p className="font-body text-[11px] text-text-muted leading-snug">Established 2009 · Riyadh, Saudi Arabia</p>
                 </div>

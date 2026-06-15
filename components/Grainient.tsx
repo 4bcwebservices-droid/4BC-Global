@@ -1,6 +1,5 @@
 'use client'
 import { useEffect, useRef } from 'react'
-import { Renderer, Program, Mesh, Triangle } from 'ogl'
 import './Grainient.css'
 
 interface GrainientProps {
@@ -39,14 +38,14 @@ const hexToRgb = (hex: string): [number, number, number] => {
   ]
 }
 
-const vertex = `#version 300 es
-in vec2 position;
+const VERT = `
+attribute vec2 position;
 void main() {
   gl_Position = vec4(position, 0.0, 1.0);
 }
 `
 
-const fragment = `#version 300 es
+const FRAG = `
 precision highp float;
 uniform vec2 iResolution;
 uniform float iTime;
@@ -71,7 +70,6 @@ uniform float uZoom;
 uniform vec3 uColor1;
 uniform vec3 uColor2;
 uniform vec3 uColor3;
-out vec4 fragColor;
 #define S(a,b,t) smoothstep(a,b,t)
 mat2 Rot(float a){float s=sin(a),c=cos(a);return mat2(c,-s,s,c);}
 vec2 hash(vec2 p){p=vec2(dot(p,vec2(2127.1,81.17)),dot(p,vec2(1269.5,283.37)));return fract(sin(p)*43758.5453);}
@@ -120,9 +118,22 @@ void mainImage(out vec4 o, vec2 C){
 void main(){
   vec4 o=vec4(0.0);
   mainImage(o,gl_FragCoord.xy);
-  fragColor=o;
+  gl_FragColor=o;
 }
 `
+
+function compileShader(gl: WebGLRenderingContext, type: number, src: string): WebGLShader | null {
+  const sh = gl.createShader(type)
+  if (!sh) return null
+  gl.shaderSource(sh, src)
+  gl.compileShader(sh)
+  if (!gl.getShaderParameter(sh, gl.COMPILE_STATUS)) {
+    console.error('Grainient shader error:', gl.getShaderInfoLog(sh))
+    gl.deleteShader(sh)
+    return null
+  }
+  return sh
+}
 
 export default function Grainient({
   timeSpeed = 0.25,
@@ -152,65 +163,81 @@ export default function Grainient({
   const containerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    if (!containerRef.current) return
-
-    const renderer = new Renderer({
-      webgl: 2,
-      alpha: true,
-      antialias: false,
-      dpr: Math.min(window.devicePixelRatio || 1, 2),
-    })
-
-    const gl = renderer.gl
-    const canvas = gl.canvas as HTMLCanvasElement
-    canvas.style.width = '100%'
-    canvas.style.height = '100%'
-    canvas.style.display = 'block'
-
     const container = containerRef.current
+    if (!container) return
+
+    const canvas = document.createElement('canvas')
+    canvas.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;display:block;'
+
+    const gl = (
+      canvas.getContext('webgl') ||
+      canvas.getContext('experimental-webgl' as 'webgl')
+    ) as WebGLRenderingContext | null
+    if (!gl) return
+
+    const vs = compileShader(gl, gl.VERTEX_SHADER, VERT)
+    const fs = compileShader(gl, gl.FRAGMENT_SHADER, FRAG)
+    if (!vs || !fs) return
+
+    const prog = gl.createProgram()
+    if (!prog) return
+    gl.attachShader(prog, vs)
+    gl.attachShader(prog, fs)
+    gl.linkProgram(prog)
+    if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) {
+      console.error('Grainient link error:', gl.getProgramInfoLog(prog))
+      return
+    }
+    gl.useProgram(prog)
+
+    // Full-screen triangle (covers clip space with 3 vertices)
+    const buf = gl.createBuffer()
+    gl.bindBuffer(gl.ARRAY_BUFFER, buf)
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 3, -1, -1, 3]), gl.STATIC_DRAW)
+    const aPos = gl.getAttribLocation(prog, 'position')
+    gl.enableVertexAttribArray(aPos)
+    gl.vertexAttribPointer(aPos, 2, gl.FLOAT, false, 0, 0)
+
+    // Uniform locations
+    const uTime   = gl.getUniformLocation(prog, 'iTime')
+    const uRes    = gl.getUniformLocation(prog, 'iResolution')
+    const uCenter = gl.getUniformLocation(prog, 'uCenterOffset')
+
+    // Set all static uniforms once
+    gl.uniform1f(gl.getUniformLocation(prog, 'uTimeSpeed'),      timeSpeed)
+    gl.uniform1f(gl.getUniformLocation(prog, 'uColorBalance'),   colorBalance)
+    gl.uniform1f(gl.getUniformLocation(prog, 'uWarpStrength'),   warpStrength)
+    gl.uniform1f(gl.getUniformLocation(prog, 'uWarpFrequency'),  warpFrequency)
+    gl.uniform1f(gl.getUniformLocation(prog, 'uWarpSpeed'),      warpSpeed)
+    gl.uniform1f(gl.getUniformLocation(prog, 'uWarpAmplitude'),  warpAmplitude)
+    gl.uniform1f(gl.getUniformLocation(prog, 'uBlendAngle'),     blendAngle)
+    gl.uniform1f(gl.getUniformLocation(prog, 'uBlendSoftness'),  blendSoftness)
+    gl.uniform1f(gl.getUniformLocation(prog, 'uRotationAmount'), rotationAmount)
+    gl.uniform1f(gl.getUniformLocation(prog, 'uNoiseScale'),     noiseScale)
+    gl.uniform1f(gl.getUniformLocation(prog, 'uGrainAmount'),    grainAmount)
+    gl.uniform1f(gl.getUniformLocation(prog, 'uGrainScale'),     grainScale)
+    gl.uniform1f(gl.getUniformLocation(prog, 'uGrainAnimated'),  grainAnimated ? 1.0 : 0.0)
+    gl.uniform1f(gl.getUniformLocation(prog, 'uContrast'),       contrast)
+    gl.uniform1f(gl.getUniformLocation(prog, 'uGamma'),          gamma)
+    gl.uniform1f(gl.getUniformLocation(prog, 'uSaturation'),     saturation)
+    gl.uniform1f(gl.getUniformLocation(prog, 'uZoom'),           zoom)
+    gl.uniform2f(uCenter, centerX, centerY)
+    gl.uniform3fv(gl.getUniformLocation(prog, 'uColor1'), hexToRgb(color1))
+    gl.uniform3fv(gl.getUniformLocation(prog, 'uColor2'), hexToRgb(color2))
+    gl.uniform3fv(gl.getUniformLocation(prog, 'uColor3'), hexToRgb(color3))
+
     container.appendChild(canvas)
 
-    const geometry = new Triangle(gl)
-    const program = new Program(gl, {
-      vertex,
-      fragment,
-      uniforms: {
-        iTime: { value: 0 },
-        iResolution: { value: new Float32Array([1, 1]) },
-        uTimeSpeed: { value: timeSpeed },
-        uColorBalance: { value: colorBalance },
-        uWarpStrength: { value: warpStrength },
-        uWarpFrequency: { value: warpFrequency },
-        uWarpSpeed: { value: warpSpeed },
-        uWarpAmplitude: { value: warpAmplitude },
-        uBlendAngle: { value: blendAngle },
-        uBlendSoftness: { value: blendSoftness },
-        uRotationAmount: { value: rotationAmount },
-        uNoiseScale: { value: noiseScale },
-        uGrainAmount: { value: grainAmount },
-        uGrainScale: { value: grainScale },
-        uGrainAnimated: { value: grainAnimated ? 1.0 : 0.0 },
-        uContrast: { value: contrast },
-        uGamma: { value: gamma },
-        uSaturation: { value: saturation },
-        uCenterOffset: { value: new Float32Array([centerX, centerY]) },
-        uZoom: { value: zoom },
-        uColor1: { value: new Float32Array(hexToRgb(color1)) },
-        uColor2: { value: new Float32Array(hexToRgb(color2)) },
-        uColor3: { value: new Float32Array(hexToRgb(color3)) },
-      },
-    })
-
-    const mesh = new Mesh(gl, { geometry, program })
+    const dpr = Math.min(window.devicePixelRatio || 1, 2)
 
     const setSize = () => {
-      const rect = container.getBoundingClientRect()
-      const width = Math.max(1, Math.floor(rect.width))
-      const height = Math.max(1, Math.floor(rect.height))
-      renderer.setSize(width, height)
-      const res = program.uniforms.iResolution.value as Float32Array
-      res[0] = gl.drawingBufferWidth
-      res[1] = gl.drawingBufferHeight
+      const { width, height } = container.getBoundingClientRect()
+      const w = Math.max(1, Math.round(width * dpr))
+      const h = Math.max(1, Math.round(height * dpr))
+      canvas.width = w
+      canvas.height = h
+      gl.viewport(0, 0, w, h)
+      gl.uniform2f(uRes, w, h)
     }
 
     const ro = new ResizeObserver(setSize)
@@ -220,8 +247,8 @@ export default function Grainient({
     let raf = 0
     const t0 = performance.now()
     const loop = (t: number) => {
-      program.uniforms.iTime.value = (t - t0) * 0.001
-      renderer.render({ scene: mesh })
+      gl.uniform1f(uTime, (t - t0) * 0.001)
+      gl.drawArrays(gl.TRIANGLES, 0, 3)
       raf = requestAnimationFrame(loop)
     }
     raf = requestAnimationFrame(loop)
@@ -229,11 +256,9 @@ export default function Grainient({
     return () => {
       cancelAnimationFrame(raf)
       ro.disconnect()
-      try {
-        container.removeChild(canvas)
-      } catch {
-        // ignore
-      }
+      try { container.removeChild(canvas) } catch { /* ignore */ }
+      const ext = gl.getExtension('WEBGL_lose_context')
+      if (ext) ext.loseContext()
     }
   }, [
     timeSpeed, colorBalance, warpStrength, warpFrequency, warpSpeed,

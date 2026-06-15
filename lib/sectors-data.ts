@@ -71,7 +71,7 @@ export const sectors: Sector[] = [
     gradientFrom: '#C2410C',
     accentHex: '#C2410C',
     icon: ShoppingBag,
-    image: '/sectors/retail-food.jpg',
+    image: '/sectors/retail-food.webp',
   },
   {
     slug: 'banking-finance',
@@ -110,7 +110,7 @@ export const sectors: Sector[] = [
     engagementsList: [
       'Market sizing and opportunity assessment for corporate credit cards across UAE, KSA and Egypt',
       'Brand image and equity study for a leading bank in UAE',
-      'Opportunity assessment for digitizing payments across mini-bus taxis in South Africa',
+      'Opportunity assessment of payment digitalization among mini-bus taxis in South Africa',
       'Voice of customer and satisfaction with banking services in UAE',
       'Market research for a mobile money application in UAE',
       'Customer experience research across bank branches in UAE',
@@ -119,7 +119,7 @@ export const sectors: Sector[] = [
     gradientFrom: '#1D4ED8',
     accentHex: '#1D4ED8',
     icon: Landmark,
-    image: '/sectors/banking-finance.jpg',
+    image: '/sectors/banking-finance.webp',
   },
   {
     slug: 'oil-gas',
@@ -162,7 +162,7 @@ export const sectors: Sector[] = [
     gradientFrom: '#D97706',
     accentHex: '#D97706',
     icon: Flame,
-    image: '/sectors/fuels-energy.jpg',
+    image: '/sectors/fuels-energy.webp',
   },
   {
     slug: 'real-estate',
@@ -204,7 +204,7 @@ export const sectors: Sector[] = [
     gradientFrom: '#047857',
     accentHex: '#047857',
     icon: Building2,
-    image: '/sectors/real-estate.jpg',
+    image: '/sectors/real-estate.webp',
   },
   {
     slug: 'government-public-sector',
@@ -236,7 +236,7 @@ export const sectors: Sector[] = [
     gradientFrom: '#3730A3',
     accentHex: '#3730A3',
     icon: Shield,
-    image: '/sectors/government.jpg',
+    image: '/sectors/government.webp',
   },
   {
     slug: 'industrial',
@@ -279,7 +279,7 @@ export const sectors: Sector[] = [
     gradientFrom: '#475569',
     accentHex: '#475569',
     icon: Factory,
-    image: '/sectors/industrial-manufacturing.jpg',
+    image: '/sectors/industrial-manufacturing.webp',
   },
   {
     slug: 'transport-logistics',
@@ -304,13 +304,13 @@ export const sectors: Sector[] = [
     logoImages: [],
     engagementsList: [
       'Competitive intelligence on Ports across Middle East and Africa region',
-      'Opportunity assessment for digitizing payments across mini-bus taxis in South Africa',
+      'Opportunity assessment of payment digitalization among mini-bus taxis in South Africa',
     ],
     gradient: 'linear-gradient(135deg, #0F766E 0%, #134E4A 100%)',
     gradientFrom: '#0F766E',
     accentHex: '#0F766E',
     icon: Truck,
-    image: '/sectors/transport-logistics.jpg',
+    image: '/sectors/transport-logistics.webp',
   },
   {
     slug: 'automotive',
@@ -353,7 +353,7 @@ export const sectors: Sector[] = [
     gradientFrom: '#7C3AED',
     accentHex: '#7C3AED',
     icon: Car,
-    image: '/sectors/logistics.jpg',
+    image: '/sectors/logistics.webp',
   },
   {
     slug: 'telecom-ict',
@@ -390,7 +390,7 @@ export const sectors: Sector[] = [
     gradientFrom: '#0891B2',
     accentHex: '#0891B2',
     icon: Wifi,
-    image: '/sectors/telecom.jpg',
+    image: '/sectors/telecom.webp',
   },
   {
     slug: 'fmcg-cpg',
@@ -421,7 +421,7 @@ export const sectors: Sector[] = [
     gradientFrom: '#DB2777',
     accentHex: '#DB2777',
     icon: Package,
-    image: '/sectors/fmcg-cpg.jpg',
+    image: '/sectors/fmcg-cpg.webp',
   },
   {
     slug: 'healthcare-pharma',
@@ -471,7 +471,7 @@ export const sectors: Sector[] = [
     gradientFrom: '#15803D',
     accentHex: '#15803D',
     icon: Zap,
-    image: '/sectors/fuels-energy.jpg',
+    image: '/sectors/fuels-energy.webp',
   },
   {
     slug: 'regional-conglomerates',
@@ -491,7 +491,7 @@ export const sectors: Sector[] = [
     gradientFrom: '#059669',
     accentHex: '#059669',
     icon: Globe,
-    image: '/sectors/regional-conglomerates.jpg',
+    image: '/sectors/regional-conglomerates.webp',
   },
   {
     slug: 'metals-industries',
@@ -509,7 +509,7 @@ export const sectors: Sector[] = [
     gradientFrom: '#64748B',
     accentHex: '#64748B',
     icon: Layers,
-    image: '/sectors/metal-core.jpg',
+    image: '/sectors/metal-core.webp',
   },
 ]
 

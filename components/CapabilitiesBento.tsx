@@ -9,7 +9,7 @@ const serviceAreas = [
     icon: Search,
     title: 'Business Research',
     color: '#4F7BE8',
-    image: '/capabilities/business-research.jpg',
+    image: '/capabilities/business-research.webp',
     href: '/services#business-research',
     desc: 'End-to-end market intelligence — from landscape mapping to strategic entry decisions.',
     services: [
@@ -31,7 +31,7 @@ const serviceAreas = [
     icon: Users,
     title: 'CX & Experience',
     color: '#C45FA0',
-    image: '/capabilities/cx.jpg',
+    image: '/capabilities/cx.webp',
     href: '/services#customer-experience',
     desc: 'Understanding what customers truly think — not just what they say.',
     services: [
@@ -49,7 +49,7 @@ const serviceAreas = [
     icon: BarChart2,
     title: 'Impact Assessment',
     color: '#E8A020',
-    image: '/capabilities/impact-assessment.jpg',
+    image: '/capabilities/impact-assessment.webp',
     href: '/services#impact-assessment',
     desc: 'Evidence-backed measurement of economic, social, and reputational value.',
     services: [
@@ -57,6 +57,9 @@ const serviceAreas = [
       'Economic Impact Assessment (EIA)',
       'Event Performance — Footfall & Economic Impact',
       'Social Impact Assessment (SIA)',
+      'GRI (Global Reporting Initiative)',
+      'Social Return on Investment (SROI)',
+      'Materiality Assessment',
     ],
   },
   {
@@ -64,7 +67,7 @@ const serviceAreas = [
     icon: MapPin,
     title: 'Geolocation-Based Services',
     color: '#3BBFA3',
-    image: '/capabilities/geolocation.jpg',
+    image: '/capabilities/geolocation.webp',
     href: '/services#geolocation-services',
     desc: 'Spatial intelligence that turns location data into network strategy, powered by our proprietary 4BC Landscape platform.',
     services: [
@@ -79,12 +82,12 @@ const serviceAreas = [
     icon: Lightbulb,
     title: 'Other Specialist Areas',
     color: '#C45FA0',
-    image: '/capabilities/advisory.jpg',
+    image: '/capabilities/advisory.webp',
     href: '/services#specialist-areas',
     desc: 'Proprietary platforms and specialist methodologies for complex research needs.',
     services: [
       'Concept Evaluation',
-      'InfUSE — Secondary research-based intelligence solution',
+      'inFUSE — Secondary research-based intelligence solution',
       'Counterfeit Assessment',
       'Co-creation Workshops for Business Strategy',
     ],
@@ -102,7 +105,7 @@ export default function CapabilitiesBento() {
     if (paused) return
     const t = setTimeout(() => {
       setActive((prev) => (prev + 1) % serviceAreas.length)
-    }, 4000)
+    }, 7000)
     return () => clearTimeout(t)
   }, [paused, active])
 
@@ -147,7 +150,7 @@ export default function CapabilitiesBento() {
                     className="absolute bottom-0 left-0 h-[2px] rounded-full"
                     style={{
                       backgroundColor: s.color,
-                      animation: paused ? 'none' : 'tabProgress 4s linear forwards',
+                      animation: paused ? 'none' : 'tabProgress 7s linear forwards',
                       width: paused ? '100%' : undefined,
                     }}
                   />
