@@ -166,99 +166,127 @@ export default function Grainient({
     const container = containerRef.current
     if (!container) return
 
-    const canvas = document.createElement('canvas')
-    canvas.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;display:block;'
-
-    const gl = (
-      canvas.getContext('webgl') ||
-      canvas.getContext('experimental-webgl' as 'webgl')
-    ) as WebGLRenderingContext | null
-    if (!gl) return
-
-    const vs = compileShader(gl, gl.VERTEX_SHADER, VERT)
-    const fs = compileShader(gl, gl.FRAGMENT_SHADER, FRAG)
-    if (!vs || !fs) return
-
-    const prog = gl.createProgram()
-    if (!prog) return
-    gl.attachShader(prog, vs)
-    gl.attachShader(prog, fs)
-    gl.linkProgram(prog)
-    if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) {
-      console.error('Grainient link error:', gl.getProgramInfoLog(prog))
-      return
-    }
-    gl.useProgram(prog)
-
-    // Full-screen triangle (covers clip space with 3 vertices)
-    const buf = gl.createBuffer()
-    gl.bindBuffer(gl.ARRAY_BUFFER, buf)
-    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 3, -1, -1, 3]), gl.STATIC_DRAW)
-    const aPos = gl.getAttribLocation(prog, 'position')
-    gl.enableVertexAttribArray(aPos)
-    gl.vertexAttribPointer(aPos, 2, gl.FLOAT, false, 0, 0)
-
-    // Uniform locations
-    const uTime   = gl.getUniformLocation(prog, 'iTime')
-    const uRes    = gl.getUniformLocation(prog, 'iResolution')
-    const uCenter = gl.getUniformLocation(prog, 'uCenterOffset')
-
-    // Set all static uniforms once
-    gl.uniform1f(gl.getUniformLocation(prog, 'uTimeSpeed'),      timeSpeed)
-    gl.uniform1f(gl.getUniformLocation(prog, 'uColorBalance'),   colorBalance)
-    gl.uniform1f(gl.getUniformLocation(prog, 'uWarpStrength'),   warpStrength)
-    gl.uniform1f(gl.getUniformLocation(prog, 'uWarpFrequency'),  warpFrequency)
-    gl.uniform1f(gl.getUniformLocation(prog, 'uWarpSpeed'),      warpSpeed)
-    gl.uniform1f(gl.getUniformLocation(prog, 'uWarpAmplitude'),  warpAmplitude)
-    gl.uniform1f(gl.getUniformLocation(prog, 'uBlendAngle'),     blendAngle)
-    gl.uniform1f(gl.getUniformLocation(prog, 'uBlendSoftness'),  blendSoftness)
-    gl.uniform1f(gl.getUniformLocation(prog, 'uRotationAmount'), rotationAmount)
-    gl.uniform1f(gl.getUniformLocation(prog, 'uNoiseScale'),     noiseScale)
-    gl.uniform1f(gl.getUniformLocation(prog, 'uGrainAmount'),    grainAmount)
-    gl.uniform1f(gl.getUniformLocation(prog, 'uGrainScale'),     grainScale)
-    gl.uniform1f(gl.getUniformLocation(prog, 'uGrainAnimated'),  grainAnimated ? 1.0 : 0.0)
-    gl.uniform1f(gl.getUniformLocation(prog, 'uContrast'),       contrast)
-    gl.uniform1f(gl.getUniformLocation(prog, 'uGamma'),          gamma)
-    gl.uniform1f(gl.getUniformLocation(prog, 'uSaturation'),     saturation)
-    gl.uniform1f(gl.getUniformLocation(prog, 'uZoom'),           zoom)
-    gl.uniform2f(uCenter, centerX, centerY)
-    gl.uniform3fv(gl.getUniformLocation(prog, 'uColor1'), hexToRgb(color1))
-    gl.uniform3fv(gl.getUniformLocation(prog, 'uColor2'), hexToRgb(color2))
-    gl.uniform3fv(gl.getUniformLocation(prog, 'uColor3'), hexToRgb(color3))
-
-    container.appendChild(canvas)
-
-    const dpr = Math.min(window.devicePixelRatio || 1, 2)
-
-    const setSize = () => {
-      const { width, height } = container.getBoundingClientRect()
-      const w = Math.max(1, Math.round(width * dpr))
-      const h = Math.max(1, Math.round(height * dpr))
-      canvas.width = w
-      canvas.height = h
-      gl.viewport(0, 0, w, h)
-      gl.uniform2f(uRes, w, h)
-    }
-
-    const ro = new ResizeObserver(setSize)
-    ro.observe(container)
-    setSize()
-
     let raf = 0
-    const t0 = performance.now()
-    const loop = (t: number) => {
-      gl.uniform1f(uTime, (t - t0) * 0.001)
-      gl.drawArrays(gl.TRIANGLES, 0, 3)
+    let cancelIdle: (() => void) | null = null
+    let glCleanup: (() => void) | null = null
+
+    const init = () => {
+      const canvas = document.createElement('canvas')
+      // Start invisible — fade in once the first frame is drawn
+      canvas.style.cssText =
+        'position:absolute;top:0;left:0;width:100%;height:100%;display:block;opacity:0;transition:opacity 0.8s ease;'
+
+      const gl = (
+        canvas.getContext('webgl') ||
+        canvas.getContext('experimental-webgl' as 'webgl')
+      ) as WebGLRenderingContext | null
+      if (!gl) return
+
+      const vs = compileShader(gl, gl.VERTEX_SHADER, VERT)
+      const fs = compileShader(gl, gl.FRAGMENT_SHADER, FRAG)
+      if (!vs || !fs) return
+
+      const prog = gl.createProgram()
+      if (!prog) return
+      gl.attachShader(prog, vs)
+      gl.attachShader(prog, fs)
+      gl.linkProgram(prog)
+      if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) {
+        console.error('Grainient link error:', gl.getProgramInfoLog(prog))
+        return
+      }
+      gl.useProgram(prog)
+
+      const buf = gl.createBuffer()
+      gl.bindBuffer(gl.ARRAY_BUFFER, buf)
+      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 3, -1, -1, 3]), gl.STATIC_DRAW)
+      const aPos = gl.getAttribLocation(prog, 'position')
+      gl.enableVertexAttribArray(aPos)
+      gl.vertexAttribPointer(aPos, 2, gl.FLOAT, false, 0, 0)
+
+      const uTime   = gl.getUniformLocation(prog, 'iTime')
+      const uRes    = gl.getUniformLocation(prog, 'iResolution')
+      const uCenter = gl.getUniformLocation(prog, 'uCenterOffset')
+
+      gl.uniform1f(gl.getUniformLocation(prog, 'uTimeSpeed'),      timeSpeed)
+      gl.uniform1f(gl.getUniformLocation(prog, 'uColorBalance'),   colorBalance)
+      gl.uniform1f(gl.getUniformLocation(prog, 'uWarpStrength'),   warpStrength)
+      gl.uniform1f(gl.getUniformLocation(prog, 'uWarpFrequency'),  warpFrequency)
+      gl.uniform1f(gl.getUniformLocation(prog, 'uWarpSpeed'),      warpSpeed)
+      gl.uniform1f(gl.getUniformLocation(prog, 'uWarpAmplitude'),  warpAmplitude)
+      gl.uniform1f(gl.getUniformLocation(prog, 'uBlendAngle'),     blendAngle)
+      gl.uniform1f(gl.getUniformLocation(prog, 'uBlendSoftness'),  blendSoftness)
+      gl.uniform1f(gl.getUniformLocation(prog, 'uRotationAmount'), rotationAmount)
+      gl.uniform1f(gl.getUniformLocation(prog, 'uNoiseScale'),     noiseScale)
+      gl.uniform1f(gl.getUniformLocation(prog, 'uGrainAmount'),    grainAmount)
+      gl.uniform1f(gl.getUniformLocation(prog, 'uGrainScale'),     grainScale)
+      gl.uniform1f(gl.getUniformLocation(prog, 'uGrainAnimated'),  grainAnimated ? 1.0 : 0.0)
+      gl.uniform1f(gl.getUniformLocation(prog, 'uContrast'),       contrast)
+      gl.uniform1f(gl.getUniformLocation(prog, 'uGamma'),          gamma)
+      gl.uniform1f(gl.getUniformLocation(prog, 'uSaturation'),     saturation)
+      gl.uniform1f(gl.getUniformLocation(prog, 'uZoom'),           zoom)
+      gl.uniform2f(uCenter, centerX, centerY)
+      gl.uniform3fv(gl.getUniformLocation(prog, 'uColor1'), hexToRgb(color1))
+      gl.uniform3fv(gl.getUniformLocation(prog, 'uColor2'), hexToRgb(color2))
+      gl.uniform3fv(gl.getUniformLocation(prog, 'uColor3'), hexToRgb(color3))
+
+      container.appendChild(canvas)
+
+      const dpr = Math.min(window.devicePixelRatio || 1, 2)
+
+      const setSize = () => {
+        const { width, height } = container.getBoundingClientRect()
+        const w = Math.max(1, Math.round(width * dpr))
+        const h = Math.max(1, Math.round(height * dpr))
+        canvas.width = w
+        canvas.height = h
+        gl.viewport(0, 0, w, h)
+        gl.uniform2f(uRes, w, h)
+      }
+
+      const ro = new ResizeObserver(setSize)
+      ro.observe(container)
+      setSize()
+
+      let firstFrame = true
+      const t0 = performance.now()
+      const loop = (t: number) => {
+        gl.uniform1f(uTime, (t - t0) * 0.001)
+        gl.drawArrays(gl.TRIANGLES, 0, 3)
+        // Fade in after the first frame is confirmed rendered
+        if (firstFrame) {
+          firstFrame = false
+          canvas.style.opacity = '1'
+        }
+        raf = requestAnimationFrame(loop)
+      }
       raf = requestAnimationFrame(loop)
+
+      glCleanup = () => {
+        cancelAnimationFrame(raf)
+        ro.disconnect()
+        try { container.removeChild(canvas) } catch { /* ignore */ }
+        const ext = gl.getExtension('WEBGL_lose_context')
+        if (ext) ext.loseContext()
+      }
     }
-    raf = requestAnimationFrame(loop)
+
+    // Defer WebGL init until the browser is idle so it never blocks
+    // the initial paint or LCP. Falls back to a 200ms timeout on
+    // browsers that don't support requestIdleCallback (e.g. Safari < 16).
+    if ('requestIdleCallback' in window) {
+      const id = (window as unknown as { requestIdleCallback: (cb: () => void, o: object) => number })
+        .requestIdleCallback(init, { timeout: 2000 })
+      cancelIdle = () =>
+        (window as unknown as { cancelIdleCallback: (id: number) => void }).cancelIdleCallback(id)
+    } else {
+      const id = window.setTimeout(init, 200)
+      cancelIdle = () => window.clearTimeout(id)
+    }
 
     return () => {
-      cancelAnimationFrame(raf)
-      ro.disconnect()
-      try { container.removeChild(canvas) } catch { /* ignore */ }
-      const ext = gl.getExtension('WEBGL_lose_context')
-      if (ext) ext.loseContext()
+      cancelIdle?.()
+      glCleanup?.()
     }
   }, [
     timeSpeed, colorBalance, warpStrength, warpFrequency, warpSpeed,
