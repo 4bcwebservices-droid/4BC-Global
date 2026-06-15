@@ -453,7 +453,7 @@ export default function AboutPage() {
                     flag: '🇦🇪',
                     city: 'Dubai, UAE',
                     label: 'Head Office',
-                    address: 'Dubai, United Arab Emirates',
+                    address: '4BC Global DMCC, 906, Saba Tower 1, Jumeirah Lakes Towers, Dubai, UAE',
                     phone: '+971 4 3595123',
                     email: 'info@4bcglobal.com',
                     accent: '#2B4A8C',
@@ -763,7 +763,7 @@ export default function AboutPage() {
               </Link>
             </div>
             <div className="mt-10 pt-8 border-t border-white/15 flex flex-wrap items-center justify-center gap-6 text-white/50 font-body text-[12px]">
-              <span className="flex items-center gap-2"><MapPin size={11} /> Dubai, United Arab Emirates</span>
+              <span className="flex items-center gap-2"><MapPin size={11} /> Jumeirah Lakes Towers, Dubai, UAE</span>
               <a href="tel:+97143595123" className="flex items-center gap-2 hover:text-white/80 transition-colors"><Phone size={11} /> +971 4 3595123</a>
               <a href="mailto:info@4bcglobal.com" className="flex items-center gap-2 hover:text-white/80 transition-colors"><Mail size={11} /> info@4bcglobal.com</a>
               <span className="text-white/15 hidden sm:inline">·</span>

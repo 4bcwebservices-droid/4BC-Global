@@ -451,6 +451,10 @@ export default function ContactPage() {
 
                     <div>
                       <p className="font-body text-[10px] font-semibold uppercase tracking-[0.1em] text-text-muted/60 mb-1.5">🇦🇪 Dubai, UAE</p>
+                      <div className="flex items-start gap-2 font-body text-[12px] text-text-muted mb-1">
+                        <MapPin size={11} className="flex-shrink-0 mt-0.5 text-[#E8A020]" />
+                        <span>4BC Global DMCC, 906, Saba Tower 1, Jumeirah Lakes Towers, Dubai</span>
+                      </div>
                       <div className="flex items-center gap-2 font-body text-[12px] text-text-muted mb-1">
                         <Phone size={11} className="flex-shrink-0 text-[#E8A020]" />
                         <a href="tel:+97143595123" className="hover:text-primary transition-colors">+971 4 3595123</a>

@@ -148,7 +148,7 @@ export default function PrivacyPage() {
                 </p>
                 <div className="bg-bg-soft border border-border rounded-2xl p-6">
                   <p className="font-heading font-bold text-[15px] text-text mb-1">4BC Global DMCC</p>
-                  <p className="font-body text-[14px] text-text-muted">Dubai, United Arab Emirates</p>
+                  <p className="font-body text-[14px] text-text-muted">906, Saba Tower 1, Jumeirah Lakes Towers, Dubai, UAE</p>
                   <a href="mailto:info@4bcglobal.com" className="font-body text-[14px] text-primary hover:underline mt-1 inline-block">
                     info@4bcglobal.com
                   </a>
