@@ -280,8 +280,8 @@ export default function Grainient({
       cancelIdle = () =>
         (window as unknown as { cancelIdleCallback: (id: number) => void }).cancelIdleCallback(id)
     } else {
-      const id = window.setTimeout(init, 200)
-      cancelIdle = () => window.clearTimeout(id)
+      const id = setTimeout(init, 200)
+      cancelIdle = () => clearTimeout(id)
     }
 
     return () => {
