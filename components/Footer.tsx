@@ -88,7 +88,7 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="flex items-center gap-2 hover:text-gray-300 transition-colors"
             >
-              <Image src="/brand/leaders-network-logo.png" alt="The Leaders Network" width={80} height={20} className="h-4 w-auto brightness-0 invert opacity-50 hover:opacity-75 transition-opacity" />
+              <Image src="/brand/leaders-network-logo.png" alt="The Leaders Network" width={16} height={20} className="h-5 w-auto" />
               <span>A part of Leaders Network ↗</span>
             </a>
           </div>
