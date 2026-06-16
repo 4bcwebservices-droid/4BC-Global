@@ -175,7 +175,7 @@ const serviceAreas = [
     bgLight: '#FDF4FF',
     image: '/capabilities/advisory.webp',
     services: [
-      'inFUSE — Secondary research-based intelligence solution',
+      'infUSE — Secondary research-based intelligence solution',
       'Counterfeit Assessment',
       'Co-creation Workshops for Business Strategy',
     ],

@@ -42,7 +42,7 @@ const approachPrinciples = [
 
 const tools = [
   {
-    name: '4BC inFUSE',
+    name: '4BC infUSE',
     tagline: 'Your secondary intelligence, supercharged.',
     desc: 'A dynamic platform for rapid industry landscaping and competitive profiling across MEA.',
     type: 'Secondary Research Platform',
@@ -346,7 +346,7 @@ export default function HomePageContent() {
                 We embed proprietary AI tools and geo-spatial mapping into our workflows to turn raw regional data into strategic assets.
               </p>
               <p className="font-body text-body-sm text-text-muted mb-10 max-w-[50ch]">
-                Three platforms — inFUSE, Landscape, and ImpactIQ — give clients a faster, sharper path to decisions.
+                Three platforms — infUSE, Landscape, and ImpactIQ — give clients a faster, sharper path to decisions.
               </p>
               <Link
                 href="/tools"

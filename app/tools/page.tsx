@@ -7,7 +7,7 @@ import Grainient from '@/components/Grainient'
 
 export const metadata: Metadata = {
   title: 'Proprietary Tools — 4BC Global',
-  description: '4BC inFUSE, Landscape, and ImpactIQ — intelligence platforms for competitive profiling, network planning, and impact measurement.',
+  description: '4BC infUSE, Landscape, and ImpactIQ — intelligence platforms for competitive profiling, network planning, and impact measurement.',
 }
 
 const tools = [
@@ -16,10 +16,10 @@ const tools = [
     logoH: 'h-9 sm:h-20', logoW: 'w-full max-w-[320px]',
     logo: '/brand/infuse-logo.png',
     image: '/capabilities/business-research.webp',
-    name: '4BC inFUSE',
+    name: '4BC infUSE',
     subtitle: 'The Intelligence Accelerator',
     tagline: 'A supercharged secondary research platform designed to accelerate desk intelligence and baseline strategy.',
-    strategicImperative: 'Leadership teams cannot wait months to understand a shifting competitive baseline. Before deploying extensive primary research or entering a new market, organizations require an immediate, high-fidelity read on the industry landscape. inFUSE eliminates the blind spots, providing the foundational clarity required to make swift, informed strategic maneuvers.',
+    strategicImperative: 'Leadership teams cannot wait months to understand a shifting competitive baseline. Before deploying extensive primary research or entering a new market, organizations require an immediate, high-fidelity read on the industry landscape. infUSE eliminates the blind spots, providing the foundational clarity required to make swift, informed strategic maneuvers.',
     useCases: [
       { name: 'Rapid Competitive Profiling', desc: 'Deep-dive analysis into competitor positioning, market share, and operational footprints.' },
       { name: 'Precision Benchmarking', desc: 'Objective evaluations of industry standards, pricing structures, and best practices.' },

@@ -87,7 +87,7 @@ const serviceAreas = [
     desc: 'Proprietary platforms and specialist methodologies for complex research needs.',
     services: [
       'Concept Evaluation',
-      'inFUSE — Secondary research-based intelligence solution',
+      'infUSE — Secondary research-based intelligence solution',
       'Counterfeit Assessment',
       'Co-creation Workshops for Business Strategy',
     ],
